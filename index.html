@@ -10,10 +10,128 @@
 <body>
 <x-dc>
 <helmet>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&amp;display=swap">
 <style>
 body{margin:0}
 a{color:#C2410C}a:hover{color:#9A3412}
+.infographic-container {
+  background: #F4F5F7;
+  border-radius: 12px;
+  padding: 24px;
+  font-family: Montserrat, system-ui, sans-serif;
+  color: #1A1A1A;
+  box-sizing: border-box;
+}
+.infographic-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+.country-badge {
+  font-size: 14px;
+  font-weight: 800;
+  color: #EA580C;
+  letter-spacing: 1.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.infographic-title {
+  font-size: 24px;
+  font-weight: 900;
+  color: #0F172A;
+  margin: 0;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+}
+.infographic-subtitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: #475569;
+  margin: 4px 0 0 0;
+}
+.phases-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  align-items: stretch;
+  position: relative;
+}
+.phase-card {
+  background: #FFFFFF;
+  border-radius: 10px;
+  padding: 16px 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 1px solid #E2E8F0;
+  position: relative;
+}
+.phase-number {
+  font-size: 28px;
+  font-weight: 900;
+  color: #EA580C;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.phase-title {
+  font-size: 12px;
+  font-weight: 800;
+  color: #0F172A;
+  margin-bottom: 12px;
+  line-height: 1.25;
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.phase-icon {
+  width: 44px;
+  height: 44px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.phase-list {
+  text-align: left;
+  font-size: 10px;
+  line-height: 1.35;
+  color: #334155;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  width: 100%;
+}
+.phase-list li {
+  position: relative;
+  padding-left: 10px;
+  margin-bottom: 4px;
+}
+.phase-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #0F172A;
+  font-weight: bold;
+}
+.phase-arrow {
+  position: absolute;
+  right: -9px;
+  top: 40%;
+  transform: translateY(-50%);
+  z-index: 2;
+  color: #0F172A;
+}
+@media (max-width: 850px) {
+  .phases-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .phase-arrow { display: none; }
+}
 </style>
 </helmet>
 <div style="width: 100%; min-height: 100vh; box-sizing: border-box; background: #FFFFFF; font-family: Montserrat, system-ui, sans-serif; color: #1A1A1A; display: flex; flex-direction: column">
@@ -27,31 +145,118 @@ a{color:#C2410C}a:hover{color:#9A3412}
 <h1 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 800">Diagnosis_Web_Leasein</h1>
 
 <!-- EXPLANATION & JUSTIFICATION BLOCK -->
-<div style="background: #1F1F1F; border: 1px solid #333333; border-left: 4px solid {{accent}}; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 14px">
+<div style="background: #1F1F1F; border: 1px solid #333333; border-left: 4px solid {{accent}}; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 16px">
 <div style="font-size: 12px; font-weight: 700; letter-spacing: 1.5px; color: {{accent}}">AUDIT PURPOSE & METHODOLOGY JUSTIFICATION</div>
 <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #D4D4D4">
 <b>Why this analysis?</b> Operating multi-regional B2B portals requires aligning user experience (UX) and conversion rate optimization (CRO) with local market nuances. This diagnosis evaluates the performance, friction points, and conversion funnels for Leasein across Peru and Colombia to unify best practices and drive qualified lead generation (MQL/SQL).
 </p>
 
-<!-- METHODOLOGY INFOGRAPHIC -->
-<div style="width: 100%; margin-top: 4px; border-radius: 8px; overflow: hidden; border: 1px solid #333333">
-<a href="https://ibb.co/60xPZhPD" target="_blank" style="display: block;">
-  <img src="https://i.ibb.co/60xPZhPD/Gemini-Generated-Image-rvv38yrvv38yrvv3.jpg" alt="Marco de Auditoría de Leads Multipaís" border="0" style="width: 100%; height: auto; display: block;">
-</a>
-</div>
+<!-- NATIVE VECTORIZED INFOGRAPHIC -->
+<div class="infographic-container">
+  <div class="infographic-header">
+    <div class="country-badge">
+      <span>[PERU]</span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+      <span>[COLOMBIA]</span>
+    </div>
+    <h2 class="infographic-title">MULTI-COUNTRY LEAD GEN AUDIT FRAMEWORK</h2>
+    <p class="infographic-subtitle">A 6-Phase Strategic & Diagnostic Playbook</p>
+  </div>
 
-<!-- TOGGLE FOR METHODOLOGY IMAGE -->
-<details style="cursor: pointer">
-<summary style="font-size: 12px; font-weight: 600; color: #A3A3A3; outline: none">View Methodology Infographic Separately</summary>
-<div style="margin-top: 12px; padding: 10px; background: #141414; border: 1px solid #262626; border-radius: 6px; text-align: center">
-<a href="https://ibb.co/60xPZhPD" target="_blank">
-  <img src="https://i.ibb.co/60xPZhPD/Gemini-Generated-Image-rvv38yrvv38yrvv3.jpg" alt="Marco de Auditoría de Leads Multipaís" border="0" style="max-width: 100%; height: auto; border-radius: 4px;">
-</a>
+  <div class="phases-grid">
+    <!-- Phase 1 -->
+    <div class="phase-card">
+      <div class="phase-number">01</div>
+      <div class="phase-title">Phase 1: Executive Summary & Diagnosis</div>
+      <div class="phase-icon">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#EA580C" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><circle cx="11" cy="14" r="3"/><line x1="13.1" y1="16.1" x2="16.5" y2="19.5"/></svg>
+      </div>
+      <ul class="phase-list">
+        <li>Minto Pyramid Principle</li>
+        <li>Top 3 Friction Bottlenecks</li>
+        <li>Core Hypothesis</li>
+      </ul>
+      <div class="phase-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l14 9-14 9z"/></svg></div>
+    </div>
+
+    <!-- Phase 2 -->
+    <div class="phase-card">
+      <div class="phase-number">02</div>
+      <div class="phase-title">Phase 2: Inbound Funnel Content-Offer Fit</div>
+      <div class="phase-icon">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#EA580C" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+      </div>
+      <ul class="phase-list">
+        <li><b>TOFU:</b> Intent Alignment</li>
+        <li><b>MOFU:</b> Lead Magnets</li>
+        <li><b>BOFU:</b> SDR/Sales Routing</li>
+      </ul>
+      <div class="phase-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l14 9-14 9z"/></svg></div>
+    </div>
+
+    <!-- Phase 3 -->
+    <div class="phase-card">
+      <div class="phase-number">03</div>
+      <div class="phase-title">Phase 3: CRO, UX/UI & Micro-Friction</div>
+      <div class="phase-icon">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#EA580C" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="2" y1="7" x2="22" y2="7"/><circle cx="12" cy="14" r="3"/><line x1="12" y1="14" x2="14" y2="12"/></svg>
+      </div>
+      <ul class="phase-list">
+        <li>Friction Mapping</li>
+        <li>Behavioral Analytics</li>
+        <li>RICE A/B Testing Roadmap</li>
+      </ul>
+      <div class="phase-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l14 9-14 9z"/></svg></div>
+    </div>
+
+    <!-- Phase 4 -->
+    <div class="phase-card">
+      <div class="phase-number">04</div>
+      <div class="phase-title">Phase 4: Geolocation & International SEO</div>
+      <div class="phase-icon">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#EA580C" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20"/><path d="M2 12h20"/><path d="M16 16l4 4"/><path d="M20 16l-4 4"/></svg>
+      </div>
+      <ul class="phase-list">
+        <li>Technical SEO & hreflang</li>
+        <li>Local Trust & Compliance</li>
+        <li>CDN & Web Vitals</li>
+      </ul>
+      <div class="phase-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l14 9-14 9z"/></svg></div>
+    </div>
+
+    <!-- Phase 5 -->
+    <div class="phase-card">
+      <div class="phase-number">05</div>
+      <div class="phase-title">Phase 5: Analytics & Unit Economics</div>
+      <div class="phase-icon">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#EA580C" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 17l4-4 3 3 5-5"/><circle cx="18" cy="16" r="2"/></svg>
+      </div>
+      <ul class="phase-list">
+        <li>Top-of-Funnel Efficiency</li>
+        <li>MQL-to-SQL Conversion</li>
+        <li>CPL, CPQL & CAC (LTV:CAC)</li>
+      </ul>
+      <div class="phase-arrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l14 9-14 9z"/></svg></div>
+    </div>
+
+    <!-- Phase 6 -->
+    <div class="phase-card">
+      <div class="phase-number">06</div>
+      <div class="phase-title">Phase 6: Strategic Roadmap & Execution</div>
+      <div class="phase-icon">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#EA580C" stroke-width="2"><rect x="3" y="3" width="8" height="8"/><rect x="13" y="3" width="8" height="8"/><rect x="3" y="13" width="8" height="8"/><rect x="13" y="13" width="8" height="8"/></svg>
+      </div>
+      <ul class="phase-list">
+        <li><b>Wave 1:</b> Quick Wins (W1-4)</li>
+        <li><b>Wave 2:</b> Core Optimization (W5-12)</li>
+        <li><b>Wave 3:</b> Transformation (M3+)</li>
+      </ul>
+    </div>
+  </div>
 </div>
-</details>
 
 <!-- TOGGLE FOR PROMPT -->
-<details style="cursor: pointer">
+<details style="cursor: pointer; margin-top: 4px;">
 <summary style="font-size: 12px; font-weight: 600; color: #A3A3A3; outline: none">View Advanced Framework Prompt (Senior McKinsey Consultant Style)</summary>
 <div style="margin-top: 12px; padding: 14px; background: #141414; border: 1px solid #262626; border-radius: 6px; font-size: 12px; line-height: 1.5; color: #A3A3A3; font-family: monospace; white-space: pre-wrap">Act as a Senior Engagement Manager from McKinsey & Company specializing in Digital Growth, Go-To-Market (GTM) Strategy, and Customer Acquisition for international markets.
 
