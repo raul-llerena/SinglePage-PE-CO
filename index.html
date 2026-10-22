@@ -15,6 +15,49 @@
 body{margin:0; background:#FAFAFA;}
 a{color:#fe5000}a:hover{color:#d44300}
 .page-wrapper { width: 100%; max-width: 1080px; margin: 0 auto; box-sizing: border-box; background: #FFFFFF; font-family: Poppins, system-ui, sans-serif; color: #1A1A1A; display: flex; flex-direction: column; min-height: 100vh; box-shadow: 0 0 20px rgba(0,0,0,0.05); }
+
+/* ESTILOS DE PESTAÑAS (TABS) */
+.tabs-navigation {
+  display: flex;
+  background: #1F1F1F;
+  border-bottom: 2px solid #333333;
+  padding: 0 40px;
+  gap: 12px;
+}
+.tab-btn {
+  padding: 14px 20px;
+  font-family: Poppins, system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #A3A3A3;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.tab-btn:hover {
+  color: #FFFFFF;
+}
+.tab-btn.active {
+  color: #fe5000;
+  border-bottom-color: #fe5000;
+  background: rgba(254, 80, 0, 0.05);
+}
+
+.view-content {
+  display: none;
+  padding: 24px 40px;
+  flex-direction: column;
+  gap: 20px;
+}
+.view-content.active {
+  display: flex;
+}
+
 .infographic-container { background: #F4F5F7; border-radius: 10px; padding: 18px; font-family: Poppins, system-ui, sans-serif; color: #1A1A1A; box-sizing: border-box; }
 .infographic-header { text-align: center; margin-bottom: 16px; }
 .country-badge { font-size: 13px; font-weight: 800; color: #fe5000; letter-spacing: 1px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 4px; }
@@ -35,17 +78,17 @@ a{color:#fe5000}a:hover{color:#d44300}
 
 <div class="page-wrapper">
 
-<!-- HEADER COMPACTO -->
+<!-- HEADER GENERAL -->
 <div style="background: #141414; color: #FFFFFF; width: 100%">
-<div style="padding: 28px 40px 24px; display: flex; flex-direction: column; gap: 12px">
+<div style="padding: 24px 40px 18px; display: flex; flex-direction: column; gap: 10px">
 <div style="display: flex; justify-content: space-between; align-items: center">
 <div style="font-size: 12px; font-weight: 700; letter-spacing: 2px; color: {{accent}}">ONE PAGER · CONVERSIÓN WEB MULTIPAÍS</div>
 <div style="font-size: 12px; color: #BDBDBD">20 de octubre de 2026</div>
 </div>
 <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 20px;">
   <div>
-    <h1 style="margin: 0; font-size: 32px; line-height: 1.1; font-weight: 800">Diagnosis Web Leasein</h1>
-    <p style="margin: 6px 0 0; font-size: 13.5px; line-height: 1.45; color: #D4D4D4;"><b>Idea Principal: Consolidado de tres revisiones independientes con IA (Claude, ChatGPT y Gemini) para evaluar el rendimiento de conversión de las homes sin acceso directo a Analytics o CRM.</b></p>
+    <h1 style="margin: 0; font-size: 30px; line-height: 1.1; font-weight: 800">Diagnosis Web Leasein</h1>
+    <p style="margin: 4px 0 0; font-size: 13px; line-height: 1.4; color: #D4D4D4;"><b>Idea Principal: Consolidado de tres revisiones independientes con IA (Claude, ChatGPT y Gemini) para evaluar el rendimiento de conversión de las homes sin acceso directo a Analytics o CRM.</b></p>
   </div>
   <div style="display: flex; gap: 6px; shrink: 0;">
     <div style="font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 999px; background: #262626; color: #FFFFFF">Claude ✓</div>
@@ -53,78 +96,94 @@ a{color:#fe5000}a:hover{color:#d44300}
     <div style="font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 999px; background: #262626; color: #FFFFFF">Gemini ✓</div>
   </div>
 </div>
+</div>
 
-<!-- DESPLEGABLE PROPÓSITO Y METODOLOGÍA -->
-<details style="cursor: pointer; background: #1F1F1F; border: 1px solid #333333; border-left: 4px solid {{accent}}; border-radius: 6px; padding: 12px 16px; margin-top: 6px;">
-<summary style="font-size: 11.5px; font-weight: 700; letter-spacing: 1px; color: {{accent}}; outline: none;">VER PROPÓSITO Y JUSTIFICACIÓN METODOLÓGICA DEL AUDIT</summary>
-<div style="margin-top: 12px; display: flex; flex-direction: column; gap: 12px;">
-<p style="margin: 0; font-size: 13px; line-height: 1.5; color: #D4D4D4">
-<b>Idea Principal: Operar portales B2B multirregionales requiere alinear UX y CRO con los matices del mercado local para impulsar la generación de leads cualificados (MQL/SQL).</b> Este diagnóstico cualitativo evalúa el rendimiento, la fricción de conversión y los embudos de captación en Leasein Perú y Colombia para establecer mejores prácticas unificadas.
-</p>
-
-<!-- INFOGRAFÍA VECTORIAL METODOLÓGICA -->
-<div class="infographic-container">
-  <div class="infographic-header">
-    <div class="country-badge">
-      <span>[PERÚ]</span>
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
-      <span>[COLOMBIA]</span>
-    </div>
-    <h2 class="infographic-title">MARCO DE AUDITORÍA DE LEADS MULTIPAÍS</h2>
-    <p class="infographic-subtitle"><b>Un Playbook Estratégico y Diagnóstico de 6 Fases para eliminar la fricción y escalar la conversión.</b></p>
-  </div>
-
-  <div class="phases-grid">
-    <div class="phase-card">
-      <div class="phase-number">01</div>
-      <div class="phase-title">Fase 1: Resumen Ejecutivo</div>
-      <div class="phase-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fe5000" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><circle cx="11" cy="14" r="3"/><line x1="13.1" y1="16.1" x2="16.5" y2="19.5"/></svg></div>
-      <ul class="phase-list"><li><b>Minto Pyramid Principle</b></li><li>Top 3 Botellas</li><li>Hipótesis Central</li></ul>
-      <div class="phase-arrow"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l14 9-14 9z"/></svg></div>
-    </div>
-    <div class="phase-card">
-      <div class="phase-number">02</div>
-      <div class="phase-title">Fase 2: Arquitectura Embudo</div>
-      <div class="phase-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fe5000" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg></div>
-      <ul class="phase-list"><li><b>TOFU: Intención</b></li><li>MOFU: Magnets</li><li>BOFU: SDR Routing</li></ul>
-      <div class="phase-arrow"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l14 9-14 9z"/></svg></div>
-    </div>
-    <div class="phase-card">
-      <div class="phase-number">03</div>
-      <div class="phase-title">Fase 3: CRO, UX/UI & Fricción</div>
-      <div class="phase-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fe5000" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="2" y1="7" x2="22" y2="7"/><circle cx="12" cy="14" r="3"/><line x1="12" y1="14" x2="14" y2="12"/></svg></div>
-      <ul class="phase-list"><li><b>Mapeo Fricción</b></li><li>Analítica Comport.</li><li>Pruebas RICE</li></ul>
-      <div class="phase-arrow"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l14 9-14 9z"/></svg></div>
-    </div>
-    <div class="phase-card">
-      <div class="phase-number">04</div>
-      <div class="phase-title">Fase 4: SEO Internacional</div>
-      <div class="phase-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fe5000" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20"/><path d="M2 12h20"/><path d="M16 16l4 4"/><path d="M20 16l-4 4"/></svg></div>
-      <ul class="phase-list"><li><b>SEO & hreflang</b></li><li>Confianza Local</li><li>CDN / Web Vitals</li></ul>
-      <div class="phase-arrow"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l14 9-14 9z"/></svg></div>
-    </div>
-    <div class="phase-card">
-      <div class="phase-number">05</div>
-      <div class="phase-title">Fase 5: Unit Economics</div>
-      <div class="phase-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fe5000" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 17l4-4 3 3 5-5"/><circle cx="18" cy="16" r="2"/></svg></div>
-      <ul class="phase-list"><li><b>Top-of-Funnel</b></li><li>MQL a SQL</li><li>CPL, CPQL & CAC</li></ul>
-      <div class="phase-arrow"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l14 9-14 9z"/></svg></div>
-    </div>
-    <div class="phase-card">
-      <div class="phase-number">06</div>
-      <div class="phase-title">Fase 6: Ruta Ejecución</div>
-      <div class="phase-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fe5000" stroke-width="2"><rect x="3" y="3" width="8" height="8"/><rect x="13" y="3" width="8" height="8"/><rect x="3" y="13" width="8" height="8"/><rect x="13" y="13" width="8" height="8"/></svg></div>
-      <ul class="phase-list"><li><b>Ola 1: Quick Wins</b></li><li>Ola 2: Core Opt.</li><li>Ola 3: Transform.</li></ul>
-    </div>
-  </div>
+<!-- NAVEGACIÓN DE PESTAÑAS (VISTA 1 VS VISTA 2) -->
+<div class="tabs-navigation">
+  <button class="tab-btn active" onclick="switchView('diagnosisView', this)">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    VISTA 1: DIAGNÓSTICO (CRO & ANALÍTICA)
+  </button>
+  <button class="tab-btn" onclick="switchView('actionView', this)">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+    VISTA 2: PLAN DE ACCIÓN & EJECUCIÓN
+  </button>
 </div>
 </div>
-</details>
 
-<!-- DESPLEGABLE PROMPT MCKINSEY -->
-<details style="cursor: pointer; margin-top: 4px;">
-<summary style="font-size: 11.5px; font-weight: 600; color: #A3A3A3; outline: none">View Advanced Framework Prompt (Senior McKinsey Consultant Style)</summary>
-<div style="margin-top: 8px; padding: 12px; background: #141414; border: 1px solid #262626; border-radius: 6px; font-size: 11px; line-height: 1.45; color: #A3A3A3; font-family: monospace; white-space: pre-wrap">Act as a Senior Engagement Manager from McKinsey & Company specializing in Digital Growth, Go-To-Market (GTM) Strategy, and Customer Acquisition for international markets.
+<!-- ==================== VISTA 1: DIAGNÓSTICO ==================== -->
+<div id="diagnosisView" class="view-content active">
+
+  <!-- DESPLEGABLE PROPÓSITO Y METODOLOGÍA -->
+  <details style="cursor: pointer; background: #1F1F1F; border: 1px solid #333333; border-left: 4px solid {{accent}}; border-radius: 6px; padding: 12px 16px;">
+  <summary style="font-size: 11.5px; font-weight: 700; letter-spacing: 1px; color: {{accent}}; outline: none;">VER PROPÓSITO Y JUSTIFICACIÓN METODOLÓGICA DEL AUDIT</summary>
+  <div style="margin-top: 12px; display: flex; flex-direction: column; gap: 12px;">
+  <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #D4D4D4">
+  <b>Idea Principal: Operar portales B2B multirregionales requiere alinear UX y CRO con los matices del mercado local para impulsar la generación de leads cualificados (MQL/SQL).</b> Este diagnóstico cualitativo evalúa el rendimiento, la fricción de conversión y los embudos de captación en Leasein Perú y Colombia para establecer mejores prácticas unificadas.
+  </p>
+
+  <div class="infographic-container">
+    <div class="infographic-header">
+      <div class="country-badge">
+        <span>[PERÚ]</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+        <span>[COLOMBIA]</span>
+      </div>
+      <h2 class="infographic-title">MARCO DE AUDITORÍA DE LEADS MULTIPAÍS</h2>
+      <p class="infographic-subtitle"><b>Un Playbook Estratégico y Diagnóstico de 6 Fases para eliminar la fricción y escalar la conversión.</b></p>
+    </div>
+
+    <div class="phases-grid">
+      <div class="phase-card">
+        <div class="phase-number">01</div>
+        <div class="phase-title">Fase 1: Resumen Ejecutivo</div>
+        <div class="phase-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fe5000" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><circle cx="11" cy="14" r="3"/><line x1="13.1" y1="16.1" x2="16.5" y2="19.5"/></svg></div>
+        <ul class="phase-list"><li><b>Minto Pyramid Principle</b></li><li>Top 3 Botellas</li><li>Hipótesis Central</li></ul>
+        <div class="phase-arrow"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l14 9-14 9z"/></svg></div>
+      </div>
+      <div class="phase-card">
+        <div class="phase-number">02</div>
+        <div class="phase-title">Fase 2: Arquitectura Embudo</div>
+        <div class="phase-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fe5000" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg></div>
+        <ul class="phase-list"><li><b>TOFU: Intención</b></li><li>MOFU: Magnets</li><li>BOFU: SDR Routing</li></ul>
+        <div class="phase-arrow"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l14 9-14 9z"/></svg></div>
+      </div>
+      <div class="phase-card">
+        <div class="phase-number">03</div>
+        <div class="phase-title">Fase 3: CRO, UX/UI & Fricción</div>
+        <div class="phase-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fe5000" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="2" y1="7" x2="22" y2="7"/><circle cx="12" cy="14" r="3"/><line x1="12" y1="14" x2="14" y2="12"/></svg></div>
+        <ul class="phase-list"><li><b>Mapeo Fricción</b></li><li>Analítica Comport.</li><li>Pruebas RICE</li></ul>
+        <div class="phase-arrow"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l14 9-14 9z"/></svg></div>
+      </div>
+      <div class="phase-card">
+        <div class="phase-number">04</div>
+        <div class="phase-title">Fase 4: SEO Internacional</div>
+        <div class="phase-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fe5000" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20"/><path d="M2 12h20"/><path d="M16 16l4 4"/><path d="M20 16l-4 4"/></svg></div>
+        <ul class="phase-list"><li><b>SEO & hreflang</b></li><li>Confianza Local</li><li>CDN / Web Vitals</li></ul>
+        <div class="phase-arrow"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l14 9-14 9z"/></svg></div>
+      </div>
+      <div class="phase-card">
+        <div class="phase-number">05</div>
+        <div class="phase-title">Fase 5: Unit Economics</div>
+        <div class="phase-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fe5000" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 17l4-4 3 3 5-5"/><circle cx="18" cy="16" r="2"/></svg></div>
+        <ul class="phase-list"><li><b>Top-of-Funnel</b></li><li>MQL a SQL</li><li>CPL, CPQL & CAC</li></ul>
+        <div class="phase-arrow"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l14 9-14 9z"/></svg></div>
+      </div>
+      <div class="phase-card">
+        <div class="phase-number">06</div>
+        <div class="phase-title">Fase 6: Ruta Ejecución</div>
+        <div class="phase-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fe5000" stroke-width="2"><rect x="3" y="3" width="8" height="8"/><rect x="13" y="3" width="8" height="8"/><rect x="3" y="13" width="8" height="8"/><rect x="13" y="13" width="8" height="8"/></svg></div>
+        <ul class="phase-list"><li><b>Ola 1: Quick Wins</b></li><li>Ola 2: Core Opt.</li><li>Ola 3: Transform.</li></ul>
+      </div>
+    </div>
+  </div>
+  </div>
+  </details>
+
+  <!-- DESPLEGABLE PROMPT MCKINSEY -->
+  <details style="cursor: pointer; margin-top: 2px;">
+  <summary style="font-size: 11.5px; font-weight: 600; color: #A3A3A3; outline: none">View Advanced Framework Prompt (Senior McKinsey Consultant Style)</summary>
+  <div style="margin-top: 8px; padding: 12px; background: #141414; border: 1px solid #262626; border-radius: 6px; font-size: 11px; line-height: 1.45; color: #A3A3A3; font-family: monospace; white-space: pre-wrap">Act as a Senior Engagement Manager from McKinsey & Company specializing in Digital Growth, Go-To-Market (GTM) Strategy, and Customer Acquisition for international markets.
 
 Your objective is to structure a Master Diagnostic and Digital Optimization Plan (Diagnostic & Growth Playbook) for a company seeking to maximize high-quality lead generation (MQLs and SQLs) through a single website operating simultaneously in two distinct geographic markets: Peru and Colombia.
 
@@ -188,446 +247,445 @@ Map actionable recommendations onto an Impact vs. Effort (2x2) Matrix:
 - Tone: Executive, analytical, incisive, data-backed, and highly professional.
 - Structure: Utilize Markdown tables for the KPI Scorecard and the Prioritization Matrix.
 - Before delivering the final report, indicate if you require any specific clarification regarding the business model, current metrics, or target markets, or proceed directly to generating the full strategic proposal.</div>
-</details>
+  </details>
 
-</div>
-</div>
+  <!-- FASE 2: ANALÍTICA Y EVOLUCIÓN DE LEADS -->
+  <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 8px;">
+  <h2 style="margin: 0; font-size: 17px; font-weight: 800; color: #0F172A;">FASE 2: Arquitectura del Embudo Inbound y Generación de Leads</h2>
+  <p style="margin: 0; font-size: 12px; color: #595959"><b>Idea Principal: Evaluación del rendimiento del embudo de captación (TOFU/MOFU/BOFU) y conversión histórica de usuarios a MQLs y SQLs.</b></p>
 
-<!-- CONTENIDO PRINCIPAL REORGANIZADO -->
-<div style="width: 100%; max-width: 1000px; margin: 0 auto; box-sizing: border-box; padding: 24px 40px; display: flex; flex-direction: column; gap: 20px;">
+  <details style="cursor: pointer; background: #1F1F1F; border: 1px solid #333333; border-left: 4px solid {{accent}}; border-radius: 8px; padding: 14px 18px; margin-top: 4px;">
+  <summary style="font-size: 11.5px; font-weight: 700; letter-spacing: 1px; color: {{accent}}; outline: none;">VER DIAGNÓSTICO DE EVOLUCIÓN DE CONVERSIÓN Y ANALÍTICA MENSUAL (2026)</summary>
+  <div style="margin-top: 14px; display: flex; flex-direction: column; gap: 16px;">
 
-<!-- FASE 2: ARQUITECTURA DE EMBUDO E INBOUND / ANALÍTICA DE LEADS -->
-<div style="display: flex; flex-direction: column; gap: 8px;">
-<h2 style="margin: 0; font-size: 18px; font-weight: 800; color: #0F172A;">FASE 2: Arquitectura del Embudo Inbound y Generación de Leads</h2>
-<p style="margin: 0; font-size: 12px; color: #595959"><b>Idea Principal: Evaluación del rendimiento del embudo de captación (TOFU/MOFU/BOFU) y conversión histórica de usuarios a MQLs y SQLs.</b></p>
-
-<details style="cursor: pointer; background: #1F1F1F; border: 1px solid #333333; border-left: 4px solid {{accent}}; border-radius: 8px; padding: 14px 18px; margin-top: 4px;">
-<summary style="font-size: 11.5px; font-weight: 700; letter-spacing: 1px; color: {{accent}}; outline: none;">VER DIAGNÓSTICO DE EVOLUCIÓN DE CONVERSIÓN Y ANALÍTICA MENSUAL (2026)</summary>
-<div style="margin-top: 14px; display: flex; flex-direction: column; gap: 16px;">
-
-  <!-- TARJETAS DE RESUMEN CON TRÁFICO, MQL, SQL Y SEP -->
-  <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px;">
-    <div style="background: #141414; border: 1px solid #262626; border-radius: 6px; padding: 10px 12px;">
-      <div style="font-size: 10px; color: #A3A3A3; font-weight: 600;">TRÁFICO</div>
-      <div style="font-size: 18px; font-weight: 800; color: #FFFFFF;">32,033</div>
+    <!-- TARJETAS DE RESUMEN CON TRÁFICO, MQL, SQL Y SEP -->
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px;">
+      <div style="background: #141414; border: 1px solid #262626; border-radius: 6px; padding: 10px 12px;">
+        <div style="font-size: 10px; color: #A3A3A3; font-weight: 600;">TRÁFICO</div>
+        <div style="font-size: 18px; font-weight: 800; color: #FFFFFF;">32,033</div>
+      </div>
+      <div style="background: #141414; border: 1px solid #262626; border-radius: 6px; padding: 10px 12px;">
+        <div style="font-size: 10px; color: #A3A3A3; font-weight: 600;">MQL</div>
+        <div style="font-size: 18px; font-weight: 800; color: #FFFFFF;">2,074</div>
+      </div>
+      <div style="background: #141414; border: 1px solid #262626; border-radius: 6px; padding: 10px 12px;">
+        <div style="font-size: 10px; color: #A3A3A3; font-weight: 600;">SQL (LEADS CALIFICADOS)</div>
+        <div style="font-size: 18px; font-weight: 800; color: #4ADE80;">287</div>
+      </div>
+      <div style="background: #141414; border: 1px solid #262626; border-radius: 6px; padding: 10px 12px;">
+        <div style="font-size: 10px; color: #A3A3A3; font-weight: 600;">SEP (SQL / TRÁFICO)</div>
+        <div style="font-size: 18px; font-weight: 800; color: {{accent}};">0.90%</div>
+      </div>
     </div>
-    <div style="background: #141414; border: 1px solid #262626; border-radius: 6px; padding: 10px 12px;">
-      <div style="font-size: 10px; color: #A3A3A3; font-weight: 600;">MQL</div>
-      <div style="font-size: 18px; font-weight: 800; color: #FFFFFF;">2,074</div>
+
+    <!-- GRÁFICO SVG NATIVO -->
+    <div style="background: #141414; border: 1px solid #262626; border-radius: 10px; padding: 16px; display: flex; flex-direction: column; gap: 10px;">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div style="font-size: 12px; font-weight: 700; color: #FFFFFF;">Tendencia de Tasa de Conversión Mensual MQL (% MQL / Tráfico) — Año 2026</div>
+        <div style="font-size: 10px; color: #A3A3A3;">Fuente: GA4 Analytics & CRM</div>
+      </div>
+
+      <svg viewBox="0 0 700 200" style="width: 100%; height: auto; overflow: visible;">
+        <line x1="40" y1="20" x2="680" y2="20" stroke="#262626" stroke-dasharray="3,3"/>
+        <text x="30" y="24" fill="#737373" font-size="9" text-anchor="end">5.0%</text>
+        <line x1="40" y1="60" x2="680" y2="60" stroke="#262626" stroke-dasharray="3,3"/>
+        <text x="30" y="64" fill="#737373" font-size="9" text-anchor="end">3.75%</text>
+        <line x1="40" y1="100" x2="680" y2="100" stroke="#262626" stroke-dasharray="3,3"/>
+        <text x="30" y="104" fill="#737373" font-size="9" text-anchor="end">2.5%</text>
+        <line x1="40" y1="140" x2="680" y2="140" stroke="#262626" stroke-dasharray="3,3"/>
+        <text x="30" y="144" fill="#737373" font-size="9" text-anchor="end">1.25%</text>
+        <line x1="40" y1="180" x2="680" y2="180" stroke="#404040"/>
+        <text x="30" y="184" fill="#737373" font-size="9" text-anchor="end">0.0%</text>
+
+        <line x1="40" y1="71.2" x2="680" y2="71.2" stroke="#fe5000" stroke-dasharray="4,4" stroke-width="1.5"/>
+        <text x="675" y="66" fill="#fe5000" font-size="9" font-weight="700" text-anchor="end">PROM: 3.4%</text>
+
+        <!-- Barras -->
+        <rect x="58" y="135.2" width="36" height="44.8" fill="#525252" rx="3"/>
+        <text x="76" y="129" fill="#D4D4D4" font-size="9.5" font-weight="700" text-anchor="middle">1.4%</text>
+        <text x="76" y="194" fill="#A3A3A3" font-size="10" text-anchor="middle">Ene</text>
+
+        <rect x="122" y="64.8" width="36" height="115.2" fill="#fe5000" rx="3"/>
+        <text x="140" y="58.8" fill="#FFFFFF" font-size="9.5" font-weight="700" text-anchor="middle">3.6%</text>
+        <text x="140" y="194" fill="#A3A3A3" font-size="10" text-anchor="middle">Feb</text>
+
+        <rect x="186" y="135.2" width="36" height="44.8" fill="#525252" rx="3"/>
+        <text x="204" y="129" fill="#D4D4D4" font-size="9.5" font-weight="700" text-anchor="middle">1.4%</text>
+        <text x="204" y="194" fill="#A3A3A3" font-size="10" text-anchor="middle">Mar</text>
+
+        <rect x="250" y="90.4" width="36" height="89.6" fill="#737373" rx="3"/>
+        <text x="268" y="84.4" fill="#D4D4D4" font-size="9.5" font-weight="700" text-anchor="middle">2.8%</text>
+        <text x="268" y="194" fill="#A3A3A3" font-size="10" text-anchor="middle">Abr</text>
+
+        <rect x="314" y="61.6" width="36" height="118.4" fill="#fe5000" rx="3"/>
+        <text x="332" y="55.6" fill="#FFFFFF" font-size="9.5" font-weight="700" text-anchor="middle">3.7%</text>
+        <text x="332" y="194" fill="#A3A3A3" font-size="10" text-anchor="middle">May</text>
+
+        <rect x="378" y="29.6" width="36" height="150.4" fill="#fe5000" rx="3"/>
+        <text x="396" y="23.6" fill="#FFFFFF" font-size="9.5" font-weight="800" text-anchor="middle">4.7%</text>
+        <text x="396" y="194" fill="#A3A3A3" font-size="10" text-anchor="middle">Jun</text>
+
+        <rect x="442" y="45.6" width="36" height="134.4" fill="#fe5000" rx="3"/>
+        <text x="460" y="39.6" fill="#FFFFFF" font-size="9.5" font-weight="700" text-anchor="middle">4.2%</text>
+        <text x="460" y="194" fill="#A3A3A3" font-size="10" text-anchor="middle">Jul</text>
+
+        <rect x="506" y="71.2" width="36" height="108.8" fill="#737373" rx="3"/>
+        <text x="524" y="65.2" fill="#D4D4D4" font-size="9.5" font-weight="700" text-anchor="middle">3.4%</text>
+        <text x="524" y="194" fill="#A3A3A3" font-size="10" text-anchor="middle">Ago</text>
+
+        <rect x="570" y="26.4" width="36" height="153.6" fill="#4ADE80" rx="3"/>
+        <text x="588" y="20.4" fill="#4ADE80" font-size="9.5" font-weight="800" text-anchor="middle">4.8%</text>
+        <text x="588" y="194" fill="#A3A3A3" font-size="10" text-anchor="middle">Sep</text>
+
+        <rect x="634" y="42.4" width="36" height="137.6" fill="#fe5000" rx="3"/>
+        <text x="652" y="36.4" fill="#FFFFFF" font-size="9.5" font-weight="700" text-anchor="middle">4.3%</text>
+        <text x="652" y="194" fill="#A3A3A3" font-size="10" text-anchor="middle">Oct</text>
+      </svg>
+
+      <!-- NOTA EXPLICATIVA SOBRE INFORMACIÓN INCOMPLETA -->
+      <div style="font-size: 10px; color: #A3A3A3; font-style: italic; border-top: 1px stroke #262626; padding-top: 6px;">
+        * Nota: No se cuenta con la información completa de leads para la totalidad del año 2026.
+      </div>
     </div>
-    <div style="background: #141414; border: 1px solid #262626; border-radius: 6px; padding: 10px 12px;">
-      <div style="font-size: 10px; color: #A3A3A3; font-weight: 600;">SQL (LEADS CALIFICADOS)</div>
-      <div style="font-size: 18px; font-weight: 800; color: #4ADE80;">287</div>
+
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px;">
+      <div style="background: #141414; border: 1px solid #262626; border-radius: 6px; padding: 12px;">
+        <div style="font-size: 11px; font-weight: 700; color: #4ADE80; margin-bottom: 4px;">EFICIENCIA SQL / TRÁFICO (SEP)</div>
+        <div style="font-size: 12px; line-height: 1.45; color: #D4D4D4;">
+          <b>Idea Principal: El ratio global SEP alcanza un 0.90% promedio acumulado[cite: 3, 4].</b> Jun (48 SQLs, 10% conv. comercial) y Ago (61 SQLs, 10.9% conv. comercial) representan los picos de máxima calificación de demanda sobre el tráfico entrante[cite: 4].
+        </div>
+      </div>
+      <div style="background: #141414; border: 1px solid #262626; border-radius: 6px; padding: 12px;">
+        <div style="font-size: 11px; font-weight: 700; color: #EAB308; margin-bottom: 4px;">TRÁFICO VS. CONVERSIÓN</div>
+        <div style="font-size: 12px; line-height: 1.45; color: #D4D4D4;">
+          <b>Idea Principal: El volumen de tráfico por sí solo no garantiza más leads[cite: 3, 4].</b> Ago tuvo máximo tráfico (4,162) pero cayó a 3.4% MQL[cite: 3], mientras Septiembre generó más MQLs (232) y 59 SQLs con menos visitas totales (3,563)[cite: 3, 4].
+        </div>
+      </div>
+      <div style="background: #141414; border: 1px solid #262626; border-radius: 6px; padding: 12px;">
+        <div style="font-size: 11px; font-weight: 700; color: {{accent}}; margin-bottom: 4px;">OPORTUNIDAD CRO</div>
+        <div style="font-size: 12px; line-height: 1.45; color: #D4D4D4;">
+          <b>Idea Principal: Base de tráfico estable entre 3,500 y 4,100 usuarios mensuales[cite: 3].</b> Optimizar UX de formularios y prueba social elevará la línea base de MQL a >5.0% y SEP a >1.5%.
+        </div>
+      </div>
     </div>
-    <div style="background: #141414; border: 1px solid #262626; border-radius: 6px; padding: 10px 12px;">
-      <div style="font-size: 10px; color: #A3A3A3; font-weight: 600;">SEP (SQL / TRÁFICO)</div>
-      <div style="font-size: 18px; font-weight: 800; color: {{accent}};">0.90%</div>
-    </div>
+
+  </div>
+  </details>
   </div>
 
-  <!-- GRÁFICO SVG NATIVO -->
-  <div style="background: #141414; border: 1px solid #262626; border-radius: 10px; padding: 16px; display: flex; flex-direction: column; gap: 10px;">
-    <div style="display: flex; justify-content: space-between; align-items: center;">
-      <div style="font-size: 12px; font-weight: 700; color: #FFFFFF;">Tendencia de Tasa de Conversión Mensual MQL (% MQL / Tráfico) — Año 2026</div>
-      <div style="font-size: 10px; color: #A3A3A3;">Fuente: GA4 Analytics & CRM</div>
-    </div>
-
-    <svg viewBox="0 0 700 200" style="width: 100%; height: auto; overflow: visible;">
-      <line x1="40" y1="20" x2="680" y2="20" stroke="#262626" stroke-dasharray="3,3"/>
-      <text x="30" y="24" fill="#737373" font-size="9" text-anchor="end">5.0%</text>
-      <line x1="40" y1="60" x2="680" y2="60" stroke="#262626" stroke-dasharray="3,3"/>
-      <text x="30" y="64" fill="#737373" font-size="9" text-anchor="end">3.75%</text>
-      <line x1="40" y1="100" x2="680" y2="100" stroke="#262626" stroke-dasharray="3,3"/>
-      <text x="30" y="104" fill="#737373" font-size="9" text-anchor="end">2.5%</text>
-      <line x1="40" y1="140" x2="680" y2="140" stroke="#262626" stroke-dasharray="3,3"/>
-      <text x="30" y="144" fill="#737373" font-size="9" text-anchor="end">1.25%</text>
-      <line x1="40" y1="180" x2="680" y2="180" stroke="#404040"/>
-      <text x="30" y="184" fill="#737373" font-size="9" text-anchor="end">0.0%</text>
-
-      <line x1="40" y1="71.2" x2="680" y2="71.2" stroke="#fe5000" stroke-dasharray="4,4" stroke-width="1.5"/>
-      <text x="675" y="66" fill="#fe5000" font-size="9" font-weight="700" text-anchor="end">PROM: 3.4%</text>
-
-      <!-- Barras -->
-      <rect x="58" y="135.2" width="36" height="44.8" fill="#525252" rx="3"/>
-      <text x="76" y="129" fill="#D4D4D4" font-size="9.5" font-weight="700" text-anchor="middle">1.4%</text>
-      <text x="76" y="194" fill="#A3A3A3" font-size="10" text-anchor="middle">Ene</text>
-
-      <rect x="122" y="64.8" width="36" height="115.2" fill="#fe5000" rx="3"/>
-      <text x="140" y="58.8" fill="#FFFFFF" font-size="9.5" font-weight="700" text-anchor="middle">3.6%</text>
-      <text x="140" y="194" fill="#A3A3A3" font-size="10" text-anchor="middle">Feb</text>
-
-      <rect x="186" y="135.2" width="36" height="44.8" fill="#525252" rx="3"/>
-      <text x="204" y="129" fill="#D4D4D4" font-size="9.5" font-weight="700" text-anchor="middle">1.4%</text>
-      <text x="204" y="194" fill="#A3A3A3" font-size="10" text-anchor="middle">Mar</text>
-
-      <rect x="250" y="90.4" width="36" height="89.6" fill="#737373" rx="3"/>
-      <text x="268" y="84.4" fill="#D4D4D4" font-size="9.5" font-weight="700" text-anchor="middle">2.8%</text>
-      <text x="268" y="194" fill="#A3A3A3" font-size="10" text-anchor="middle">Abr</text>
-
-      <rect x="314" y="61.6" width="36" height="118.4" fill="#fe5000" rx="3"/>
-      <text x="332" y="55.6" fill="#FFFFFF" font-size="9.5" font-weight="700" text-anchor="middle">3.7%</text>
-      <text x="332" y="194" fill="#A3A3A3" font-size="10" text-anchor="middle">May</text>
-
-      <rect x="378" y="29.6" width="36" height="150.4" fill="#fe5000" rx="3"/>
-      <text x="396" y="23.6" fill="#FFFFFF" font-size="9.5" font-weight="800" text-anchor="middle">4.7%</text>
-      <text x="396" y="194" fill="#A3A3A3" font-size="10" text-anchor="middle">Jun</text>
-
-      <rect x="442" y="45.6" width="36" height="134.4" fill="#fe5000" rx="3"/>
-      <text x="460" y="39.6" fill="#FFFFFF" font-size="9.5" font-weight="700" text-anchor="middle">4.2%</text>
-      <text x="460" y="194" fill="#A3A3A3" font-size="10" text-anchor="middle">Jul</text>
-
-      <rect x="506" y="71.2" width="36" height="108.8" fill="#737373" rx="3"/>
-      <text x="524" y="65.2" fill="#D4D4D4" font-size="9.5" font-weight="700" text-anchor="middle">3.4%</text>
-      <text x="524" y="194" fill="#A3A3A3" font-size="10" text-anchor="middle">Ago</text>
-
-      <rect x="570" y="26.4" width="36" height="153.6" fill="#4ADE80" rx="3"/>
-      <text x="588" y="20.4" fill="#4ADE80" font-size="9.5" font-weight="800" text-anchor="middle">4.8%</text>
-      <text x="588" y="194" fill="#A3A3A3" font-size="10" text-anchor="middle">Sep</text>
-
-      <rect x="634" y="42.4" width="36" height="137.6" fill="#fe5000" rx="3"/>
-      <text x="652" y="36.4" fill="#FFFFFF" font-size="9.5" font-weight="700" text-anchor="middle">4.3%</text>
-      <text x="652" y="194" fill="#A3A3A3" font-size="10" text-anchor="middle">Oct</text>
-    </svg>
-
-    <!-- NOTA EXPLICATIVA SOBRE INFORMACIÓN INCOMPLETA -->
-    <div style="font-size: 10px; color: #A3A3A3; font-style: italic; border-top: 1px stroke #262626; padding-top: 6px;">
-      * Nota: No se cuenta con la información completa de leads para la totalidad del año 2026.
-    </div>
+  <!-- FASE 1 & FASE 3 & FASE 4: DIAGNÓSTICO Y UX/UI Y LOCALIZACIÓN POR PAÍS -->
+  <div style="display: flex; flex-direction: column; gap: 10px;">
+  <h2 style="margin: 0; font-size: 17px; font-weight: 800; color: #0F172A;">FASE 1, 3 & 4: Diagnóstico de UX/UI, Fricción y SEO/Localización Multipaís</h2>
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px">
+  <div style="border: 1px solid #E5E5E5; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 10px; background: #FFFFFF">
+  <div style="display: flex; justify-content: space-between; align-items: baseline">
+  <h3 style="margin: 0; font-size: 18px; font-weight: 800">Perú</h3>
+  <div style="font-size: 11.5px; color: #595959">leasein.pe</div>
   </div>
+  <div style="font-size: 12.5px; color: #404040; line-height: 1.45"><b>Idea Principal: Perú genera gran confianza mediante precios transparentes y prueba social sólida, pero dispersa la atención al competir con demasiados productos antes de cotizar.</b></div>
+  <div style="font-size: 11px; font-weight: 700; letter-spacing: 1px; color: #15803D; margin-top: 2px;">LO QUE FUNCIONA</div>
+  <div style="display: flex; flex-direction: column; gap: 4px; font-size: 12px; line-height: 1.4">
+  <div>· Precio visible al instante (desde S/179 al mes por laptop)</div>
+  <div>· Prueba social fuerte: 4,000 empresas, Forbes, Empresa B, testimonios</div>
+  <div>· Promesas operativas claras: entrega 48 h, reemplazo, 80+ especialistas</div>
+  </div>
+  <div style="font-size: 11px; font-weight: 700; letter-spacing: 1px; color: #C2410C; margin-top: 2px;">LO QUE FRENA</div>
+  <div style="display: flex; flex-direction: column; gap: 4px; font-size: 12px; line-height: 1.4">
+  <div>· Cinco productos compiten antes de cotizar</div>
+  <div>· No explica qué pasa después de enviar la cotización</div>
+  <div>· Campos del formulario sin etiqueta, solo placeholder</div>
+  <div>· "Servicios" roto y correo abre Gmail web</div>
+  </div>
+  </div>
+
+  <div style="border: 1px solid #E5E5E5; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 10px; background: #FFFFFF">
+  <div style="display: flex; justify-content: space-between; align-items: baseline">
+  <h3 style="margin: 0; font-size: 18px; font-weight: 800">Colombia</h3>
+  <div style="font-size: 11.5px; color: #595959">leasein.com.co</div>
+  </div>
+  <div style="font-size: 12.5px; color: #404040; line-height: 1.45"><b>Idea Principal: Colombia captura leads rápidamente desde el primer pantallazo, pero sufre fricción alta por falta de precios, términos no localizados y prueba social externa.</b></div>
+  <div style="font-size: 11px; font-weight: 700; letter-spacing: 1px; color: #15803D; margin-top: 2px;">LO QUE FUNCIONA</div>
+  <div style="display: flex; flex-direction: column; gap: 4px; font-size: 12px; line-height: 1.4">
+  <div>· Formulario visible desde la primera pantalla</div>
+  <div>· Proceso en 4 pasos y promesa de contacto en 5 minutos</div>
+  <div>· Mensaje enfocado: alquiler de computadores para empresas</div>
+  </div>
+  <div style="font-size: 11px; font-weight: 700; letter-spacing: 1px; color: #C2410C; margin-top: 2px;">LO QUE FRENA</div>
+  <div style="display: flex; flex-direction: column; gap: 4px; font-size: 12px; line-height: 1.4">
+  <div>· Sin cotizador ni precio: pide NIT a ciegas</div>
+  <div>· Logos de clientes peruanos (PUCP, María Almenara)</div>
+  <div>· Pide "DNI" y "vigencia de poder" (términos de Perú)</div>
+  <div>· Mezcla "renting" y "alquiler"; dos WhatsApps</div>
+  </div>
+  </div>
+  </div>
+  </div>
+
+  <!-- LECTURA CRUZADA COMPACTA -->
+  <div style="background: #FFF4ED; border-radius: 12px; padding: 16px 20px; display: flex; flex-direction: column; gap: 4px">
+  <div style="font-size: 11px; font-weight: 700; letter-spacing: 1px; color: #9A3412">SÍNTESIS DIAGNÓSTICA Y LECTURA CRUZADA</div>
+  <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #1A1A1A;"><b>Idea Principal: Ningún sitio está completo por sí solo; unificar la prueba social y precios de Perú con la velocidad de captura de Colombia crea la plantilla maestra de mayor ROI.</b> Cada sitio tiene la mitad de la respuesta. Perú convence con precio y prueba social pero dispersa; Colombia captura rápido pero carece de precio y prueba local.</p>
+  </div>
+
+  <!-- TABLA DE CONSOLIDADO IA -->
+  <div style="display: flex; flex-direction: column; gap: 8px">
+  <div style="display: flex; justify-content: space-between; align-items: baseline">
+  <h3 style="margin: 0; font-size: 15px; font-weight: 800; color: #0F172A;">Consolidado de Hallazgos IA</h3>
+  <div style="font-size: 11px; color: #595959">● coincide · – no menciona</div>
+  </div>
+  <div style="border: 1px solid #E5E5E5; border-radius: 8px; overflow: hidden; font-size: 11.5px">
+  <div style="display: grid; grid-template-columns: minmax(0, 1fr) 80px 80px 80px; background: #F5F5F5; font-size: 11px; font-weight: 700; color: #404040">
+  <div style="padding: 8px 14px">Hallazgo</div><div style="padding: 8px 0; text-align: center">Claude</div><div style="padding: 8px 0; text-align: center">ChatGPT</div><div style="padding: 8px 0; text-align: center">Gemini</div>
+  </div>
+  <div style="display: grid; grid-template-columns: minmax(0, 1fr) 80px 80px 80px; border-top: 1px solid #EEEEEE"><div style="padding: 7px 14px">CO no muestra precio ni cotizador</div><div style="padding: 7px 0; text-align: center; color: {{accent}}">●</div><div style="padding: 7px 0; text-align: center; color: {{accent}}">●</div><div style="padding: 7px 0; text-align: center; color: {{accent}}">●</div></div>
+  <div style="display: grid; grid-template-columns: minmax(0, 1fr) 80px 80px 80px; border-top: 1px solid #EEEEEE"><div style="padding: 7px 14px">Decir qué pasa después del CTA o formulario</div><div style="padding: 7px 0; text-align: center; color: {{accent}}">●</div><div style="padding: 7px 0; text-align: center; color: {{accent}}">●</div><div style="padding: 7px 0; text-align: center; color: {{accent}}">●</div></div>
+  <div style="display: grid; grid-template-columns: minmax(0, 1fr) 80px 80px 80px; border-top: 1px solid #EEEEEE"><div style="padding: 7px 14px">Separar rutas: proyecto temporal vs. renovar el parque</div><div style="padding: 7px 0; text-align: center; color: {{accent}}">●</div><div style="padding: 7px 0; text-align: center; color: {{accent}}">●</div><div style="padding: 7px 0; text-align: center; color: {{accent}}">●</div></div>
+  <div style="display: grid; grid-template-columns: minmax(0, 1fr) 80px 80px 80px; border-top: 1px solid #EEEEEE"><div style="padding: 7px 14px">Medir eventos comunes por país (cotizador, formulario, WhatsApp)</div><div style="padding: 7px 0; text-align: center; color: {{accent}}">●</div><div style="padding: 7px 0; text-align: center; color: {{accent}}">●</div><div style="padding: 7px 0; text-align: center; color: {{accent}}">●</div></div>
+  <div style="display: grid; grid-template-columns: minmax(0, 1fr) 80px 80px 80px; border-top: 1px solid #EEEEEE"><div style="padding: 7px 14px">PE: demasiados productos compiten antes de cotizar</div><div style="padding: 7px 0; text-align: center; color: #A3A3A3">–</div><div style="padding: 7px 0; text-align: center; color: {{accent}}">●</div><div style="padding: 7px 0; text-align: center; color: {{accent}}">●</div></div>
+  <div style="display: grid; grid-template-columns: minmax(0, 1fr) 80px 80px 80px; border-top: 1px solid #EEEEEE"><div style="padding: 7px 14px">Pedir RUC/NIT en un segundo paso</div><div style="padding: 7px 0; text-align: center; color: #A3A3A3">–</div><div style="padding: 7px 0; text-align: center; color: {{accent}}">●</div><div style="padding: 7px 0; text-align: center; color: {{accent}}">●</div></div>
+  <div style="display: grid; grid-template-columns: minmax(0, 1fr) 80px 80px 80px; border-top: 1px solid #EEEEEE"><div style="padding: 7px 14px">CO: textos no localizados (DNI, vigencia de poder)</div><div style="padding: 7px 0; text-align: center; color: {{accent}}">●</div><div style="padding: 7px 0; text-align: center; color: {{accent}}">●</div><div style="padding: 7px 0; text-align: center; color: #A3A3A3">–</div></div>
+  </div>
+  </div>
+
+</div>
+
+<!-- ==================== VISTA 2: PLAN DE ACCIÓN Y EJECUCIÓN ==================== -->
+<div id="actionView" class="view-content">
+
+  <!-- FASE 6: RUTA ESTRATÉGICA Y HOJA DE RUTA PRIORIZADA -->
+  <div style="display: flex; flex-direction: column; gap: 10px;">
+  <h2 style="margin: 0; font-size: 18px; font-weight: 800; color: #0F172A;">FASE 6: Ruta Estratégica y Plan de Ejecución Priorizado</h2>
+  <p style="margin: 0; font-size: 12px; color: #595959"><b>Idea Principal: Hoja de ruta por fases priorizada por impacto: Quick Wins inmediatos de redacción y localización, alineación de embudo en el Mes 1 y pruebas A/B en Meses 2-3.</b></p>
+  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px">
+  <div style="border-top: 3px solid {{accent}}; background: #FAFAFA; border-radius: 0 0 8px 8px; padding: 14px; display: flex; flex-direction: column; gap: 6px">
+  <div style="font-size: 11px; font-weight: 700; color: #9A3412">OLA 1: SEMANAS 1–2 · QUICK WINS</div>
+  <div style="display: flex; flex-direction: column; gap: 6px; font-size: 11.5px; line-height: 1.4">
+  <div><b>PE&CO:</b> línea bajo CTA con entrega esperada</div>
+  <div><b>PE&CO:</b> WhatsApp prellenado con datos</div>
+  <div><b>PE&CO:</b> etiquetas en campos y mailto corregido</div>
+  <div><b>CO:</b> cédula y Cámara Comercio</div>
+  <div><b>CO:</b> unificar término (alquiler/renting)</div>
+  </div>
+  </div>
+  <div style="border-top: 3px solid #404040; background: #FAFAFA; border-radius: 0 0 8px 8px; padding: 14px; display: flex; flex-direction: column; gap: 6px">
+  <div style="font-size: 11px; font-weight: 700; color: #404040">OLA 2: MES 1 · IGUALAR Y GUIAR</div>
+  <div style="display: flex; flex-direction: column; gap: 6px; font-size: 11.5px; line-height: 1.4">
+  <div><b>PE&CO:</b> pregunta guiada temporal vs parque</div>
+  <div><b>PE&CO:</b> página gracias con agenda</div>
+  <div><b>PE&CO:</b> eventos GTM y CRM coordinados</div>
+  <div><b>CO:</b> cotizador con precio en COP</div>
+  </div>
+  </div>
+  <div style="border-top: 3px solid #A3A3A3; background: #FAFAFA; border-radius: 0 0 8px 8px; padding: 14px; display: flex; flex-direction: column; gap: 6px">
+  <div style="font-size: 11px; font-weight: 700; color: #525252">OLA 3: MESES 2–3 · OPTIMIZAR</div>
+  <div style="display: flex; flex-direction: column; gap: 6px; font-size: 11.5px; line-height: 1.4">
+  <div><b>PE&CO:</b> A/B test formulario corto paso 2</div>
+  <div><b>PE&CO:</b> A/B test precio visible vs "desde"</div>
+  <div><b>PE&CO:</b> Packs por perfil de empleado</div>
+  <div><b>CO:</b> Prueba social con clientes locales</div>
+  </div>
+  </div>
+  </div>
+  </div>
+
+  <!-- FASE 5: ANALÍTICA Y SCORECARD DE UNIT ECONOMICS -->
+  <div style="display: flex; flex-direction: column; gap: 10px">
+  <h2 style="margin: 0; font-size: 17px; font-weight: 800; color: #0F172A;">FASE 5: Analítica y Scorecard de Unit Economics (Qué Medir)</h2>
+  <p style="margin: 0; font-size: 12px; color: #595959"><b>Idea Principal: Establecer KPIs base unificados a lo largo de la conversión de tráfico, abandono de formularios, calidad de leads (MQL a SQL) y velocidad de respuesta.</b></p>
+  <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px">
+  <div style="border: 1px solid #E5E5E5; border-radius: 8px; padding: 10px; text-align: center;"><div style="font-size: 18px; font-weight: 800; color: #fe5000">%</div><div style="font-size: 11px; color: #404040">Sesión → lead por canal</div></div>
+  <div style="border: 1px solid #E5E5E5; border-radius: 8px; padding: 10px; text-align: center;"><div style="font-size: 18px; font-weight: 800; color: #fe5000">%</div><div style="font-size: 11px; color: #404040">Abandono de cotizador</div></div>
+  <div style="border: 1px solid #E5E5E5; border-radius: 8px; padding: 10px; text-align: center;"><div style="font-size: 18px; font-weight: 800; color: #fe5000">%</div><div style="font-size: 11px; color: #404040">Lead → MQL / SQL</div></div>
+  <div style="border: 1px solid #E5E5E5; border-radius: 8px; padding: 10px; text-align: center;"><div style="font-size: 18px; font-weight: 800; color: #fe5000">min</div><div style="font-size: 11px; color: #404040">Tiempo a 1era respuesta</div></div>
+  </div>
+  </div>
+
+  <!-- RECOMENDACIÓN ESTRATÉGICA DE UNIFICACIÓN MULTIPAÍS -->
+  <div style="background: #101827; color: #FFFFFF; border-radius: 12px; padding: 22px 26px; display: flex; flex-direction: column; gap: 12px;">
+  <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1F2937; padding-bottom: 10px;">
+  <h2 style="margin: 0; font-size: 17px; font-weight: 800; color: #FFFFFF;">RECOMENDACIÓN ESTRATÉGICA: PLATAFORMA UNIFICADA MULTIPAÍS</h2>
+  <div style="font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 999px; background: {{accent}}; color: #FFFFFF;">ALTO ROI</div>
+  </div>
+
+  <p style="margin: 0; font-size: 12.5px; line-height: 1.5; color: #D1D5DB;">
+  <b>Idea Principal: Unificar leasein.pe y leasein.com.co en una sola plataforma multirregión elimina costos técnicos duplicados, maximiza la autoridad SEO del dominio y reduce drastically el CPL.</b> Mantener webs separadas duplica gastos tecnológicos y fragmenta marca sin beneficio.
+  </p>
 
   <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px;">
-    <div style="background: #141414; border: 1px solid #262626; border-radius: 6px; padding: 12px;">
-      <div style="font-size: 11px; font-weight: 700; color: #4ADE80; margin-bottom: 4px;">EFICIENCIA SQL / TRÁFICO (SEP)</div>
-      <div style="font-size: 12px; line-height: 1.45; color: #D4D4D4;">
-        <b>Idea Principal: El ratio global SEP alcanza un 0.90% promedio acumulado[cite: 3, 4].</b> Jun (48 SQLs, 10% conv. comercial) y Ago (61 SQLs, 10.9% conv. comercial) representan los picos de máxima calificación de demanda sobre el tráfico entrante[cite: 4].
-      </div>
-    </div>
-    <div style="background: #141414; border: 1px solid #262626; border-radius: 6px; padding: 12px;">
-      <div style="font-size: 11px; font-weight: 700; color: #EAB308; margin-bottom: 4px;">TRÁFICO VS. CONVERSIÓN</div>
-      <div style="font-size: 12px; line-height: 1.45; color: #D4D4D4;">
-        <b>Idea Principal: El volumen de tráfico por sí solo no garantiza más leads[cite: 3, 4].</b> Ago tuvo máximo tráfico (4,162) pero cayó a 3.4% MQL[cite: 3], mientras Septiembre generó más MQLs (232) y 59 SQLs con menos visitas totales (3,563)[cite: 3, 4].
-      </div>
-    </div>
-    <div style="background: #141414; border: 1px solid #262626; border-radius: 6px; padding: 12px;">
-      <div style="font-size: 11px; font-weight: 700; color: {{accent}}; margin-bottom: 4px;">OPORTUNIDAD CRO</div>
-      <div style="font-size: 12px; line-height: 1.45; color: #D4D4D4;">
-        <b>Idea Principal: Base de tráfico estable entre 3,500 y 4,100 usuarios mensuales[cite: 3].</b> Optimizar UX de formularios y prueba social elevará la línea base de MQL a >5.0% y SEP a >1.5%.
-      </div>
-    </div>
+  <div style="background: #1F2937; border-radius: 8px; padding: 12px;">
+  <div style="font-size: 11px; font-weight: 700; color: {{accent}}; margin-bottom: 2px;">1. HÍBRIDO CONVERSIÓN</div>
+  <div style="font-size: 11px; line-height: 1.4; color: #9CA3AF">Combina el cotizador inmediato de Perú con la captura veloz en primer pantalla de Colombia.</div>
+  </div>
+  <div style="background: #1F2937; border-radius: 8px; padding: 12px;">
+  <div style="font-size: 11px; font-weight: 700; color: {{accent}}; margin-bottom: 2px;">2. AUTORIDAD SEO</div>
+  <div style="font-size: 11px; line-height: 1.4; color: #9CA3AF">Consolida backlinks bajo un solo dominio usando <code style="color:#fe5000">hreflang</code> por país.</div>
+  </div>
+  <div style="background: #1F2937; border-radius: 8px; padding: 12px;">
+  <div style="font-size: 11px; font-weight: 700; color: {{accent}}; margin-bottom: 2px;">3. MARTECH & DATOS</div>
+  <div style="font-size: 11px; line-height: 1.4; color: #9CA3AF">Unifica la atribución de GTM y CRM bajo un único flujo MQL/SQL regional.</div>
+  </div>
   </div>
 
-</div>
-</details>
-</div>
-
-<!-- FASE 1 & FASE 3 & FASE 4: DIAGNÓSTICO Y UX/UI Y LOCALIZACIÓN POR PAÍS -->
-<div style="display: flex; flex-direction: column; gap: 10px;">
-<h2 style="margin: 0; font-size: 18px; font-weight: 800; color: #0F172A;">FASE 1, 3 & 4: Diagnóstico de UX/UI, Fricción y SEO/Localización Multipaís</h2>
-<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px">
-<div style="border: 1px solid #E5E5E5; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 10px; background: #FFFFFF">
-<div style="display: flex; justify-content: space-between; align-items: baseline">
-<h3 style="margin: 0; font-size: 18px; font-weight: 800">Perú</h3>
-<div style="font-size: 11.5px; color: #595959">leasein.pe</div>
-</div>
-<div style="font-size: 12.5px; color: #404040; line-height: 1.45"><b>Idea Principal: Perú genera gran confianza mediante precios transparentes y prueba social sólida, pero dispersa la atención al competir con demasiados productos antes de cotizar.</b></div>
-<div style="font-size: 11px; font-weight: 700; letter-spacing: 1px; color: #15803D; margin-top: 2px;">LO QUE FUNCIONA</div>
-<div style="display: flex; flex-direction: column; gap: 4px; font-size: 12px; line-height: 1.4">
-<div>· Precio visible al instante (desde S/179 al mes por laptop)</div>
-<div>· Prueba social fuerte: 4,000 empresas, Forbes, Empresa B, testimonios</div>
-<div>· Promesas operativas claras: entrega 48 h, reemplazo, 80+ especialistas</div>
-</div>
-<div style="font-size: 11px; font-weight: 700; letter-spacing: 1px; color: #C2410C; margin-top: 2px;">LO QUE FRENA</div>
-<div style="display: flex; flex-direction: column; gap: 4px; font-size: 12px; line-height: 1.4">
-<div>· Cinco productos compiten antes de cotizar</div>
-<div>· No explica qué pasa después de enviar la cotización</div>
-<div>· Campos del formulario sin etiqueta, solo placeholder</div>
-<div>· "Servicios" roto y correo abre Gmail web</div>
-</div>
-</div>
-
-<div style="border: 1px solid #E5E5E5; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 10px; background: #FFFFFF">
-<div style="display: flex; justify-content: space-between; align-items: baseline">
-<h3 style="margin: 0; font-size: 18px; font-weight: 800">Colombia</h3>
-<div style="font-size: 11.5px; color: #595959">leasein.com.co</div>
-</div>
-<div style="font-size: 12.5px; color: #404040; line-height: 1.45"><b>Idea Principal: Colombia captura leads rápidamente desde el primer pantallazo, pero sufre fricción alta por falta de precios, términos no localizados y prueba social externa.</b></div>
-<div style="font-size: 11px; font-weight: 700; letter-spacing: 1px; color: #15803D; margin-top: 2px;">LO QUE FUNCIONA</div>
-<div style="display: flex; flex-direction: column; gap: 4px; font-size: 12px; line-height: 1.4">
-<div>· Formulario visible desde la primera pantalla</div>
-<div>· Proceso en 4 pasos y promesa de contacto en 5 minutos</div>
-<div>· Mensaje enfocado: alquiler de computadores para empresas</div>
-</div>
-<div style="font-size: 11px; font-weight: 700; letter-spacing: 1px; color: #C2410C; margin-top: 2px;">LO QUE FRENA</div>
-<div style="display: flex; flex-direction: column; gap: 4px; font-size: 12px; line-height: 1.4">
-<div>· Sin cotizador ni precio: pide NIT a ciegas</div>
-<div>· Logos de clientes peruanos (PUCP, María Almenara)</div>
-<div>· Pide "DNI" y "vigencia de poder" (términos de Perú)</div>
-<div>· Mezcla "renting" y "alquiler"; dos WhatsApps</div>
-</div>
-</div>
-</div>
-</div>
-
-<!-- LECTURA CRUZADA COMPACTA -->
-<div style="background: #FFF4ED; border-radius: 12px; padding: 18px 22px; display: flex; flex-direction: column; gap: 4px">
-<div style="font-size: 11px; font-weight: 700; letter-spacing: 1px; color: #9A3412">SÍNTESIS DIAGNÓSTICA Y LECTURA CRUZADA</div>
-<p style="margin: 0; font-size: 13.5px; line-height: 1.5; color: #1A1A1A;"><b>Idea Principal: Ningún sitio está completo por sí solo; unificar la prueba social y precios de Perú con la velocidad de captura de Colombia crea la plantilla maestra de mayor ROI.</b> Cada sitio tiene la mitad de la respuesta. Perú convence con precio y prueba social pero dispersa; Colombia captura rápido pero carece de precio y prueba local.</p>
-</div>
-
-<!-- TABLA DE CONSOLIDADO IA -->
-<div style="display: flex; flex-direction: column; gap: 10px">
-<div style="display: flex; justify-content: space-between; align-items: baseline">
-<h3 style="margin: 0; font-size: 16px; font-weight: 800; color: #0F172A;">Consolidado de Hallazgos IA</h3>
-<div style="font-size: 11px; color: #595959">● coincide · – no menciona</div>
-</div>
-<div style="border: 1px solid #E5E5E5; border-radius: 10px; overflow: hidden; font-size: 12px">
-<div style="display: grid; grid-template-columns: minmax(0, 1fr) 80px 80px 80px; background: #F5F5F5; font-size: 11px; font-weight: 700; color: #404040">
-<div style="padding: 8px 14px">Hallazgo</div><div style="padding: 8px 0; text-align: center">Claude</div><div style="padding: 8px 0; text-align: center">ChatGPT</div><div style="padding: 8px 0; text-align: center">Gemini</div>
-</div>
-<div style="display: grid; grid-template-columns: minmax(0, 1fr) 80px 80px 80px; border-top: 1px solid #EEEEEE"><div style="padding: 7px 14px">CO no muestra precio ni cotizador</div><div style="padding: 7px 0; text-align: center; color: {{accent}}">●</div><div style="padding: 7px 0; text-align: center; color: {{accent}}">●</div><div style="padding: 7px 0; text-align: center; color: {{accent}}">●</div></div>
-<div style="display: grid; grid-template-columns: minmax(0, 1fr) 80px 80px 80px; border-top: 1px solid #EEEEEE"><div style="padding: 7px 14px">Decir qué pasa después del CTA o formulario</div><div style="padding: 7px 0; text-align: center; color: {{accent}}">●</div><div style="padding: 7px 0; text-align: center; color: {{accent}}">●</div><div style="padding: 7px 0; text-align: center; color: {{accent}}">●</div></div>
-<div style="display: grid; grid-template-columns: minmax(0, 1fr) 80px 80px 80px; border-top: 1px solid #EEEEEE"><div style="padding: 7px 14px">Separar rutas: proyecto temporal vs. renovar el parque</div><div style="padding: 7px 0; text-align: center; color: {{accent}}">●</div><div style="padding: 7px 0; text-align: center; color: {{accent}}">●</div><div style="padding: 7px 0; text-align: center; color: {{accent}}">●</div></div>
-<div style="display: grid; grid-template-columns: minmax(0, 1fr) 80px 80px 80px; border-top: 1px solid #EEEEEE"><div style="padding: 7px 14px">Medir eventos comunes por país (cotizador, formulario, WhatsApp)</div><div style="padding: 7px 0; text-align: center; color: {{accent}}">●</div><div style="padding: 7px 0; text-align: center; color: {{accent}}">●</div><div style="padding: 7px 0; text-align: center; color: {{accent}}">●</div></div>
-<div style="display: grid; grid-template-columns: minmax(0, 1fr) 80px 80px 80px; border-top: 1px solid #EEEEEE"><div style="padding: 7px 14px">PE: demasiados productos compiten antes de cotizar</div><div style="padding: 7px 0; text-align: center; color: #A3A3A3">–</div><div style="padding: 7px 0; text-align: center; color: {{accent}}">●</div><div style="padding: 7px 0; text-align: center; color: {{accent}}">●</div></div>
-<div style="display: grid; grid-template-columns: minmax(0, 1fr) 80px 80px 80px; border-top: 1px solid #EEEEEE"><div style="padding: 7px 14px">Pedir RUC/NIT en un segundo paso</div><div style="padding: 7px 0; text-align: center; color: #A3A3A3">–</div><div style="padding: 7px 0; text-align: center; color: {{accent}}">●</div><div style="padding: 7px 0; text-align: center; color: {{accent}}">●</div></div>
-<div style="display: grid; grid-template-columns: minmax(0, 1fr) 80px 80px 80px; border-top: 1px solid #EEEEEE"><div style="padding: 7px 14px">CO: textos no localizados (DNI, vigencia de poder)</div><div style="padding: 7px 0; text-align: center; color: {{accent}}">●</div><div style="padding: 7px 0; text-align: center; color: {{accent}}">●</div><div style="padding: 7px 0; text-align: center; color: #A3A3A3">–</div></div>
-</div>
-</div>
-
-<!-- FASE 5: ANALÍTICA Y UNIT ECONOMICS -->
-<div style="display: flex; flex-direction: column; gap: 10px">
-<h2 style="margin: 0; font-size: 18px; font-weight: 800; color: #0F172A;">FASE 5: Analítica y Scorecard de Unit Economics</h2>
-<p style="margin: 0; font-size: 12px; color: #595959"><b>Idea Principal: Establecer KPIs base unificados a lo largo de la conversión de tráfico, abandono de formularios, calidad de leads (MQL a SQL) y velocidad de respuesta.</b></p>
-<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px">
-<div style="border: 1px solid #E5E5E5; border-radius: 8px; padding: 10px; text-align: center;"><div style="font-size: 18px; font-weight: 800; color: #fe5000">%</div><div style="font-size: 11px; color: #404040">Sesión → lead por canal</div></div>
-<div style="border: 1px solid #E5E5E5; border-radius: 8px; padding: 10px; text-align: center;"><div style="font-size: 18px; font-weight: 800; color: #fe5000">%</div><div style="font-size: 11px; color: #404040">Abandono de cotizador</div></div>
-<div style="border: 1px solid #E5E5E5; border-radius: 8px; padding: 10px; text-align: center;"><div style="font-size: 18px; font-weight: 800; color: #fe5000">%</div><div style="font-size: 11px; color: #404040">Lead → MQL / SQL</div></div>
-<div style="border: 1px solid #E5E5E5; border-radius: 8px; padding: 10px; text-align: center;"><div style="font-size: 18px; font-weight: 800; color: #fe5000">min</div><div style="font-size: 11px; color: #404040">Tiempo a 1era respuesta</div></div>
-</div>
-</div>
-
-<!-- FASE 6: RUTA ESTRATÉGICA Y PLAN DE EJECUCIÓN -->
-<div style="display: flex; flex-direction: column; gap: 12px">
-<h2 style="margin: 0; font-size: 18px; font-weight: 800; color: #0F172A;">FASE 6: Ruta Estratégica y Plan de Ejecución Priorizado</h2>
-<p style="margin: 0; font-size: 12px; color: #595959"><b>Idea Principal: Hoja de ruta por fases priorizada por impacto: Quick Wins inmediatos de redacción y localización, alineación de embudo en el Mes 1 y pruebas A/B en Meses 2-3.</b></p>
-<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px">
-<div style="border-top: 3px solid {{accent}}; background: #FAFAFA; border-radius: 0 0 8px 8px; padding: 14px; display: flex; flex-direction: column; gap: 6px">
-<div style="font-size: 11px; font-weight: 700; color: #9A3412">OLA 1: SEMANAS 1–2 · QUICK WINS</div>
-<div style="display: flex; flex-direction: column; gap: 6px; font-size: 11.5px; line-height: 1.4">
-<div><b>PE&CO:</b> línea bajo CTA con entrega esperada</div>
-<div><b>PE&CO:</b> WhatsApp prellenado con datos</div>
-<div><b>PE&CO:</b> etiquetas en campos y mailto corregido</div>
-<div><b>CO:</b> cédula y Cámara Comercio</div>
-<div><b>CO:</b> unificar término (alquiler/renting)</div>
-</div>
-</div>
-<div style="border-top: 3px solid #404040; background: #FAFAFA; border-radius: 0 0 8px 8px; padding: 14px; display: flex; flex-direction: column; gap: 6px">
-<div style="font-size: 11px; font-weight: 700; color: #404040">OLA 2: MES 1 · IGUALAR Y GUIAR</div>
-<div style="display: flex; flex-direction: column; gap: 6px; font-size: 11.5px; line-height: 1.4">
-<div><b>PE&CO:</b> pregunta guiada temporal vs parque</div>
-<div><b>PE&CO:</b> página gracias con agenda</div>
-<div><b>PE&CO:</b> eventos GTM y CRM coordinados</div>
-<div><b>CO:</b> cotizador con precio en COP</div>
-</div>
-</div>
-<div style="border-top: 3px solid #A3A3A3; background: #FAFAFA; border-radius: 0 0 8px 8px; padding: 14px; display: flex; flex-direction: column; gap: 6px">
-<div style="font-size: 11px; font-weight: 700; color: #525252">OLA 3: MESES 2–3 · OPTIMIZAR</div>
-<div style="display: flex; flex-direction: column; gap: 6px; font-size: 11.5px; line-height: 1.4">
-<div><b>PE&CO:</b> A/B test formulario corto paso 2</div>
-<div><b>PE&CO:</b> A/B test precio visible vs "desde"</div>
-<div><b>PE&CO:</b> Packs por perfil de empleado</div>
-<div><b>CO:</b> Prueba social con clientes locales</div>
-</div>
-</div>
-</div>
-</div>
-
-<!-- RECOMENDACIÓN ESTRATÉGICA DE UNIFICACIÓN -->
-<div style="background: #101827; color: #FFFFFF; border-radius: 12px; padding: 22px 26px; display: flex; flex-direction: column; gap: 12px;">
-<div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1F2937; padding-bottom: 10px;">
-<h2 style="margin: 0; font-size: 17px; font-weight: 800; color: #FFFFFF;">RECOMENDACIÓN ESTRATÉGICA: PLATAFORMA UNIFICADA MULTIPAÍS</h2>
-<div style="font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 999px; background: {{accent}}; color: #FFFFFF;">ALTO ROI</div>
-</div>
-
-<p style="margin: 0; font-size: 12.5px; line-height: 1.5; color: #D1D5DB;">
-<b>Idea Principal: Unificar leasein.pe y leasein.com.co en una sola plataforma multirregión elimina costos técnicos duplicados, maximiza la autoridad SEO del dominio y reduce drásticamente el CPL.</b> Mantener webs separadas duplica gastos tecnológicos y fragmenta marca sin beneficio.
-</p>
-
-<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px;">
-<div style="background: #1F2937; border-radius: 8px; padding: 12px;">
-<div style="font-size: 11px; font-weight: 700; color: {{accent}}; margin-bottom: 2px;">1. HÍBRIDO CONVERSIÓN</div>
-<div style="font-size: 11px; line-height: 1.4; color: #9CA3AF">Combina el cotizador inmediato de Perú con la captura veloz en primer pantalla de Colombia.</div>
-</div>
-<div style="background: #1F2937; border-radius: 8px; padding: 12px;">
-<div style="font-size: 11px; font-weight: 700; color: {{accent}}; margin-bottom: 2px;">2. AUTORIDAD SEO</div>
-<div style="font-size: 11px; line-height: 1.4; color: #9CA3AF">Consolida backlinks bajo un solo dominio usando <code style="color:#fe5000">hreflang</code> por país.</div>
-</div>
-<div style="background: #1F2937; border-radius: 8px; padding: 12px;">
-<div style="font-size: 11px; font-weight: 700; color: {{accent}}; margin-bottom: 2px;">3. MARTECH & DATOS</div>
-<div style="font-size: 11px; line-height: 1.4; color: #9CA3AF">Unifica la atribución de GTM y CRM bajo un único flujo MQL/SQL regional.</div>
-</div>
-</div>
-
-<div style="border-top: 1px solid #1F2937; padding-top: 10px; display: flex; justify-content: space-between; align-items: center; font-size: 11.5px;">
-<div style="color: #E5E7EB;"><b>Ahorro de Tiempo y Costos:</b></div>
-<div style="display: flex; gap: 16px;">
-<span style="color: #4ADE80;"><b>~35%</b> Menos Hosting/MarTech</span>
-<span style="color: #4ADE80;"><b>~50%</b> Devs más rápidos</span>
-<span style="color: #4ADE80;"><b>15-25%</b> Reducción CPL</span>
-</div>
-</div>
-</div>
-
-<!-- SECCIÓN: PLAN DE TRABAJO Y ESTIMACIÓN DE HORAS (SPRINT DE 2 SEMANAS / SPRINT 1) -->
-<div style="display: flex; flex-direction: column; gap: 12px; margin-top: 10px;">
-<div style="display: flex; justify-content: space-between; align-items: baseline;">
-  <h2 style="margin: 0; font-size: 18px; font-weight: 800; color: #0F172A;">PLAN DE TRABAJO Y ESTIMACIÓN DE HORAS (SPRINT 1 · 2 SEMANAS)</h2>
-  <div style="font-size: 11px; font-weight: 700; color: {{accent}}">2 DEVS SEMI-SENIOR · 160 H TOTALES</div>
-</div>
-<p style="margin: 0; font-size: 12px; color: #595959"><b>Idea Principal: Plan de ejecución de 10 días hábiles (2 semanas) estructurado en 5 fases técnicas con estimación de horas dedicadas por desarrollador para las 6 vistas y unificación multipaís.</b></p>
-
-<!-- TARJETAS DE RESUMEN DE CAPACIDAD DE HORAS -->
-<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px;">
-  <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 10px 12px;">
-    <div style="font-size: 10px; color: #64748B; font-weight: 600;">DURACIÓN SPRINT 1</div>
-    <div style="font-size: 16px; font-weight: 800; color: #0F172A; margin-top: 2px;">2 Semanas (10 días)</div>
+  <div style="border-top: 1px solid #1F2937; padding-top: 10px; display: flex; justify-content: space-between; align-items: center; font-size: 11.5px;">
+  <div style="color: #E5E7EB;"><b>Ahorro de Tiempo y Costos:</b></div>
+  <div style="display: flex; gap: 16px;">
+  <span style="color: #4ADE80;"><b>~35%</b> Menos Hosting/MarTech</span>
+  <span style="color: #4ADE80;"><b>~50%</b> Devs más rápidos</span>
+  <span style="color: #4ADE80;"><b>15-25%</b> Reducción CPL</span>
   </div>
-  <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 10px 12px;">
-    <div style="font-size: 10px; color: #64748B; font-weight: 600;">HORAS DEV 1 (FRONT/UX)</div>
-    <div style="font-size: 16px; font-weight: 800; color: #0F172A; margin-top: 2px;">80 Horas</div>
   </div>
-  <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 10px 12px;">
-    <div style="font-size: 10px; color: #64748B; font-weight: 600;">HORAS DEV 2 (FULLSTACK/SEO)</div>
-    <div style="font-size: 16px; font-weight: 800; color: #0F172A; margin-top: 2px;">80 Horas</div>
-  </div>
-  <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 10px 12px;">
-    <div style="font-size: 10px; color: #64748B; font-weight: 600;">TOTAL HORAS SPRINT 1</div>
-    <div style="font-size: 16px; font-weight: 800; color: {{accent}}; margin-top: 2px;">160 Horas Hombre</div>
-  </div>
-</div>
-
-<!-- MATRIZ DE FASES CON HORAS Y TAREAS (SPRINT 1) -->
-<div style="border: 1px solid #E5E5E5; border-radius: 10px; overflow: hidden; font-size: 11.5px;">
-  <div style="background: #141414; color: #FFFFFF; padding: 10px 14px; font-weight: 700; font-size: 12px; display: flex; justify-content: space-between; align-items: center;">
-    <span>ESTIMACIÓN DE HORAS POR FASE (SPRINT 1) — DESGLOSE TÁCTICO</span>
-    <span style="color: {{accent}};">10 DÍAS HÁBILES</span>
   </div>
 
-  <div style="display: grid; grid-template-columns: minmax(0, 1fr) 130px 110px 110px; background: #F5F5F5; font-size: 11px; font-weight: 700; color: #404040; border-bottom: 1px solid #E5E5E5;">
-    <div style="padding: 8px 12px;">Fase y Entregables Tácticos</div>
-    <div style="padding: 8px 6px; text-align: center;">Días Estimados</div>
-    <div style="padding: 8px 6px; text-align: center;">Dev 1 (Front)</div>
-    <div style="padding: 8px 6px; text-align: center;">Dev 2 (Fullstack)</div>
-  </div>
-
-  <!-- FASE 1 -->
-  <div style="display: grid; grid-template-columns: minmax(0, 1fr) 130px 110px 110px; border-bottom: 1px solid #EEEEEE; background: #FFFFFF;">
-    <div style="padding: 10px 12px;">
-      <b>Fase 1: Setup de Arquitectura, Tipografía & Vistas 1-2 (Home PE/CO)</b><br>
-      <span style="font-size: 10.5px; color: #64748B;">Configuración de repositorio unificado, migración a Poppins, corrección de textos/términos en Colombia y etiquetas en campos.</span>
-    </div>
-    <div style="padding: 10px 6px; text-align: center; color: #0F172A; font-weight: 700;">Días 1–2</div>
-    <div style="padding: 10px 6px; text-align: center; font-weight: 700;">16 h</div>
-    <div style="padding: 10px 6px; text-align: center; font-weight: 700;">16 h</div>
-  </div>
-
-  <!-- FASE 2 -->
-  <div style="display: grid; grid-template-columns: minmax(0, 1fr) 130px 110px 110px; border-bottom: 1px solid #EEEEEE; background: #FFFFFF;">
-    <div style="padding: 10px 12px;">
-      <b>Fase 2: Cotizador Multipaís, Modales & Flow Post-CTA (Vistas 3-4)</b><br>
-      <span style="font-size: 10.5px; color: #64748B;">Cotizador con precios en COP/PEN, formulario en 2 pasos (RUC/NIT al final), redirección a WhatsApp prellenado y Página de Gracias.</span>
-    </div>
-    <div style="padding: 10px 6px; text-align: center; color: #0F172A; font-weight: 700;">Días 3–5</div>
-    <div style="padding: 10px 6px; text-align: center; font-weight: 700;">20 h</div>
-    <div style="padding: 10px 6px; text-align: center; font-weight: 700;">16 h</div>
-  </div>
-
-  <!-- FASE 3 -->
-  <div style="display: grid; grid-template-columns: minmax(0, 1fr) 130px 110px 110px; border-bottom: 1px solid #EEEEEE; background: #FFFFFF;">
-    <div style="padding: 10px 12px;">
-      <b>Fase 3: Prueba Social Local, Vistas 5-6 & Redirecciones</b><br>
-      <span style="font-size: 10.5px; color: #64748B;">Módulo de prueba social segregado por país (logos/casos CO y PE), corrección de la Vista 5 (Servicios) y ajuste de cliente mailto.</span>
-    </div>
-    <div style="padding: 10px 6px; text-align: center; color: #0F172A; font-weight: 700;">Días 6–7</div>
-    <div style="padding: 10px 6px; text-align: center; font-weight: 700;">14 h</div>
-    <div style="padding: 10px 6px; text-align: center; font-weight: 700;">14 h</div>
-  </div>
-
-  <!-- FASE 4 -->
-  <div style="display: grid; grid-template-columns: minmax(0, 1fr) 130px 110px 110px; border-bottom: 1px solid #EEEEEE; background: #FFFFFF;">
-    <div style="padding: 10px 12px;">
-      <b>Fase 4: Integración MarTech, Eventos GTM & SEO Internacional</b><br>
-      <span style="font-size: 10.5px; color: #64748B;">Implementación de <code style="color:#fe5000">hreflang</code> por región, estructuración de dataLayer para eventos comunes de conversión en GTM y vinculación CRM.</span>
-    </div>
-    <div style="padding: 10px 6px; text-align: center; color: #0F172A; font-weight: 700;">Días 8–9</div>
-    <div style="padding: 10px 6px; text-align: center; font-weight: 700;">12 h</div>
-    <div style="padding: 10px 6px; text-align: center; font-weight: 700;">16 h</div>
-  </div>
-
-  <!-- FASE 5 -->
-  <div style="display: grid; grid-template-columns: minmax(0, 1fr) 130px 110px 110px; background: #FFF4ED;">
-    <div style="padding: 10px 12px;">
-      <b style="color: #15803D;">Fase 5: QA Testing Intensivo, Optimización Mobile & Deploy</b><br>
-      <span style="font-size: 10.5px; color: #64748B;">Pruebas cruzadas de usabilidad, auditoría de disparo de píxeles, optimización de velocidad de carga (Web Vitals) y migración a producción.</span>
-    </div>
-    <div style="padding: 10px 6px; text-align: center; color: #15803D; font-weight: 800;">Día 10</div>
-    <div style="padding: 10px 6px; text-align: center; font-weight: 800; color: #15803D;">18 h</div>
-    <div style="padding: 10px 6px; text-align: center; font-weight: 800; color: #15803D;">18 h</div>
-  </div>
-
-</div>
-
-<!-- ESTIMACIÓN DE LOS SIGUIENTES 3 SPRINTS (SPRINTS 2, 3 Y 4) -->
-<div style="display: flex; flex-direction: column; gap: 10px; margin-top: 6px;">
+  <!-- SECCIÓN: PLAN DE TRABAJO Y ESTIMACIÓN DE HORAS (SPRINT DE 2 SEMANAS / SPRINT 1) -->
+  <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 10px;">
   <div style="display: flex; justify-content: space-between; align-items: baseline;">
-    <h3 style="margin: 0; font-size: 15px; font-weight: 800; color: #0F172A;">HOJA DE RUTA DE EVOLUCIÓN: SIGUIENTES 3 SPRINTS (SPRINTS 2–4)</h3>
-    <span style="font-size: 11px; font-weight: 700; color: #64748B;">CAPACIDAD ESTIMADA: 480 HORAS HOMBRE HASTA MES 3</span>
+    <h2 style="margin: 0; font-size: 18px; font-weight: 800; color: #0F172A;">PLAN DE TRABAJO Y ESTIMACIÓN DE HORAS (SPRINT 1 · 2 SEMANAS)</h2>
+    <div style="font-size: 11px; font-weight: 700; color: {{accent}}">2 DEVS SEMI-SENIOR · 160 H TOTALES</div>
   </div>
-  <p style="margin: 0; font-size: 12px; color: #595959"><b>Idea Principal: Planificación estratégica a mediano plazo (Sprints 2 a 4) para escalabilidad de experimentos A/B, personalización avanzada por geolocalización y automatización de lead scoring en CRM.</b></p>
+  <p style="margin: 0; font-size: 12px; color: #595959"><b>Idea Principal: Plan de ejecución de 10 días hábiles (2 semanas) estructurado en 5 fases técnicas con estimación de horas dedicadas por desarrollador para las 6 vistas y unificación multipaís.</b></p>
 
-  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px;">
-    
-    <!-- SPRINT 2 -->
-    <div style="border: 1px solid #E2E8F0; border-top: 3px solid #fe5000; border-radius: 8px; padding: 12px; background: #FFFFFF; display: flex; flex-direction: column; gap: 6px;">
-      <div style="display: flex; justify-content: space-between; align-items: center;">
-        <span style="font-size: 11px; font-weight: 800; color: #0F172A;">SPRINT 2 (MES 1.5)</span>
-        <span style="font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 4px; background: #FFF4ED; color: #fe5000;">160 HORAS</span>
-      </div>
-      <div style="font-size: 11px; font-weight: 700; color: #fe5000;">EXPERIMENTACIÓN A/B & LEAD GUIDANCE</div>
-      <div style="font-size: 11px; line-height: 1.4; color: #404040; display: flex; flex-direction: column; gap: 4px;">
-        <div><b>• Dev 1 (80 h):</b> Desarrollo de variantes A/B (Formulario corto vs. largo, precios explícitos vs. "desde").</div>
-        <div><b>• Dev 2 (80 h):</b> Flujo interactivo de cualificación previa (¿Proyecto temporal o renovación de parque?), integración con herramienta A/B (VWO/Optimizely).</div>
-      </div>
+  <!-- TARJETAS DE RESUMEN DE CAPACIDAD DE HORAS -->
+  <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px;">
+    <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 10px 12px;">
+      <div style="font-size: 10px; color: #64748B; font-weight: 600;">DURACIÓN SPRINT 1</div>
+      <div style="font-size: 16px; font-weight: 800; color: #0F172A; margin-top: 2px;">2 Semanas (10 días)</div>
+    </div>
+    <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 10px 12px;">
+      <div style="font-size: 10px; color: #64748B; font-weight: 600;">HORAS DEV 1 (FRONT/UX)</div>
+      <div style="font-size: 16px; font-weight: 800; color: #0F172A; margin-top: 2px;">80 Horas</div>
+    </div>
+    <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 10px 12px;">
+      <div style="font-size: 10px; color: #64748B; font-weight: 600;">HORAS DEV 2 (FULLSTACK/SEO)</div>
+      <div style="font-size: 16px; font-weight: 800; color: #0F172A; margin-top: 2px;">80 Horas</div>
+    </div>
+    <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 10px 12px;">
+      <div style="font-size: 10px; color: #64748B; font-weight: 600;">TOTAL HORAS SPRINT 1</div>
+      <div style="font-size: 16px; font-weight: 800; color: {{accent}}; margin-top: 2px;">160 Horas Hombre</div>
+    </div>
+  </div>
+
+  <!-- MATRIZ DE FASES CON HORAS Y TAREAS (SPRINT 1) -->
+  <div style="border: 1px solid #E5E5E5; border-radius: 10px; overflow: hidden; font-size: 11.5px;">
+    <div style="background: #141414; color: #FFFFFF; padding: 10px 14px; font-weight: 700; font-size: 12px; display: flex; justify-content: space-between; align-items: center;">
+      <span>ESTIMACIÓN DE HORAS POR FASE (SPRINT 1) — DESGLOSE TÁCTICO</span>
+      <span style="color: {{accent}};">10 DÍAS HÁBILES</span>
     </div>
 
-    <!-- SPRINT 3 -->
-    <div style="border: 1px solid #E2E8F0; border-top: 3px solid #0F172A; border-radius: 8px; padding: 12px; background: #FFFFFF; display: flex; flex-direction: column; gap: 6px;">
-      <div style="display: flex; justify-content: space-between; align-items: center;">
-        <span style="font-size: 11px; font-weight: 800; color: #0F172A;">SPRINT 3 (MES 2.5)</span>
-        <span style="font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 4px; background: #F1F5F9; color: #0F172A;">160 HORAS</span>
-      </div>
-      <div style="font-size: 11px; font-weight: 700; color: #0F172A;">AUTOMATIZACIÓN CRM & INTEGRACIÓN B2B</div>
-      <div style="font-size: 11px; line-height: 1.4; color: #404040; display: flex; flex-direction: column; gap: 4px;">
-        <div><b>• Dev 1 (80 h):</b> Portal dinámico de packs preconfigurados por perfil de empleado (Dev, Admin, Comercial) para PYMEs.</div>
-        <div><b>• Dev 2 (80 h):</b> Webhooks avanzados a CRM (HubSpot/Salesforce), regla de lead scoring automático por RUC/NIT validado en API pública.</div>
-      </div>
+    <div style="display: grid; grid-template-columns: minmax(0, 1fr) 130px 110px 110px; background: #F5F5F5; font-size: 11px; font-weight: 700; color: #404040; border-bottom: 1px solid #E5E5E5;">
+      <div style="padding: 8px 12px;">Fase y Entregables Tácticos</div>
+      <div style="padding: 8px 6px; text-align: center;">Días Estimados</div>
+      <div style="padding: 8px 6px; text-align: center;">Dev 1 (Front)</div>
+      <div style="padding: 8px 6px; text-align: center;">Dev 2 (Fullstack)</div>
     </div>
 
-    <!-- SPRINT 4 -->
-    <div style="border: 1px solid #E2E8F0; border-top: 3px solid #15803D; border-radius: 8px; padding: 12px; background: #FFFFFF; display: flex; flex-direction: column; gap: 6px;">
-      <div style="display: flex; justify-content: space-between; align-items: center;">
-        <span style="font-size: 11px; font-weight: 800; color: #0F172A;">SPRINT 4 (MES 3.5)</span>
-        <span style="font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 4px; background: #DCFCE7; color: #15803D;">160 HORAS</span>
+    <!-- FASE 1 -->
+    <div style="display: grid; grid-template-columns: minmax(0, 1fr) 130px 110px 110px; border-bottom: 1px solid #EEEEEE; background: #FFFFFF;">
+      <div style="padding: 10px 12px;">
+        <b>Fase 1: Setup de Arquitectura, Tipografía & Vistas 1-2 (Home PE/CO)</b><br>
+        <span style="font-size: 10.5px; color: #64748B;">Configuración de repositorio unificado, migración a Poppins, corrección de textos/términos en Colombia y etiquetas en campos.</span>
       </div>
-      <div style="font-size: 11px; font-weight: 700; color: #15803D;">PERSONALIZACIÓN DINÁMICA & ESCALA</div>
-      <div style="font-size: 11px; line-height: 1.4; color: #404040; display: flex; flex-direction: column; gap: 4px;">
-        <div><b>• Dev 1 (80 h):</b> Personalización de landing pages por cohorte/fuente de tráfico (PPC vs. Orgánico vs. LinkedIn Ads).</div>
-        <div><b>• Dev 2 (80 h):</b> Enrutamiento por IP/Geolocalización automática, optimización avanzada de carga CDN y Server-Side GTM.</div>
+      <div style="padding: 10px 6px; text-align: center; color: #0F172A; font-weight: 700;">Días 1–2</div>
+      <div style="padding: 10px 6px; text-align: center; font-weight: 700;">16 h</div>
+      <div style="padding: 10px 6px; text-align: center; font-weight: 700;">16 h</div>
+    </div>
+
+    <!-- FASE 2 -->
+    <div style="display: grid; grid-template-columns: minmax(0, 1fr) 130px 110px 110px; border-bottom: 1px solid #EEEEEE; background: #FFFFFF;">
+      <div style="padding: 10px 12px;">
+        <b>Fase 2: Cotizador Multipaís, Modales & Flow Post-CTA (Vistas 3-4)</b><br>
+        <span style="font-size: 10.5px; color: #64748B;">Cotizador con precios en COP/PEN, formulario en 2 pasos (RUC/NIT al final), redirección a WhatsApp prellenado y Página de Gracias.</span>
       </div>
+      <div style="padding: 10px 6px; text-align: center; color: #0F172A; font-weight: 700;">Días 3–5</div>
+      <div style="padding: 10px 6px; text-align: center; font-weight: 700;">20 h</div>
+      <div style="padding: 10px 6px; text-align: center; font-weight: 700;">16 h</div>
+    </div>
+
+    <!-- FASE 3 -->
+    <div style="display: grid; grid-template-columns: minmax(0, 1fr) 130px 110px 110px; border-bottom: 1px solid #EEEEEE; background: #FFFFFF;">
+      <div style="padding: 10px 12px;">
+        <b>Fase 3: Prueba Social Local, Vistas 5-6 & Redirecciones</b><br>
+        <span style="font-size: 10.5px; color: #64748B;">Módulo de prueba social segregado por país (logos/casos CO y PE), corrección de la Vista 5 (Servicios) y ajuste de cliente mailto.</span>
+      </div>
+      <div style="padding: 10px 6px; text-align: center; color: #0F172A; font-weight: 700;">Días 6–7</div>
+      <div style="padding: 10px 6px; text-align: center; font-weight: 700;">14 h</div>
+      <div style="padding: 10px 6px; text-align: center; font-weight: 700;">14 h</div>
+    </div>
+
+    <!-- FASE 4 -->
+    <div style="display: grid; grid-template-columns: minmax(0, 1fr) 130px 110px 110px; border-bottom: 1px solid #EEEEEE; background: #FFFFFF;">
+      <div style="padding: 10px 12px;">
+        <b>Fase 4: Integración MarTech, Eventos GTM & SEO Internacional</b><br>
+        <span style="font-size: 10.5px; color: #64748B;">Implementación de <code style="color:#fe5000">hreflang</code> por región, estructuración de dataLayer para eventos comunes de conversión en GTM y vinculación CRM.</span>
+      </div>
+      <div style="padding: 10px 6px; text-align: center; color: #0F172A; font-weight: 700;">Días 8–9</div>
+      <div style="padding: 10px 6px; text-align: center; font-weight: 700;">12 h</div>
+      <div style="padding: 10px 6px; text-align: center; font-weight: 700;">16 h</div>
+    </div>
+
+    <!-- FASE 5 -->
+    <div style="display: grid; grid-template-columns: minmax(0, 1fr) 130px 110px 110px; background: #FFF4ED;">
+      <div style="padding: 10px 12px;">
+        <b style="color: #15803D;">Fase 5: QA Testing Intensivo, Optimización Mobile & Deploy</b><br>
+        <span style="font-size: 10.5px; color: #64748B;">Pruebas cruzadas de usabilidad, auditoría de disparo de píxeles, optimización de velocidad de carga (Web Vitals) y migración a producción.</span>
+      </div>
+      <div style="padding: 10px 6px; text-align: center; color: #15803D; font-weight: 800;">Día 10</div>
+      <div style="padding: 10px 6px; text-align: center; font-weight: 800; color: #15803D;">18 h</div>
+      <div style="padding: 10px 6px; text-align: center; font-weight: 800; color: #15803D;">18 h</div>
     </div>
 
   </div>
-</div>
+
+  <!-- ESTIMACIÓN DE LOS SIGUIENTES 3 SPRINTS (SPRINTS 2, 3 Y 4) -->
+  <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 6px;">
+    <div style="display: flex; justify-content: space-between; align-items: baseline;">
+      <h3 style="margin: 0; font-size: 15px; font-weight: 800; color: #0F172A;">HOJA DE RUTA DE EVOLUCIÓN: SIGUIENTES 3 SPRINTS (SPRINTS 2–4)</h3>
+      <span style="font-size: 11px; font-weight: 700; color: #64748B;">CAPACIDAD ESTIMADA: 480 HORAS HOMBRE HASTA MES 3</span>
+    </div>
+    <p style="margin: 0; font-size: 12px; color: #595959"><b>Idea Principal: Planificación estratégica a mediano plazo (Sprints 2 a 4) para escalabilidad de experimentos A/B, personalización avanzada por geolocalización y automatización de lead scoring en CRM.</b></p>
+
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px;">
+      
+      <!-- SPRINT 2 -->
+      <div style="border: 1px solid #E2E8F0; border-top: 3px solid #fe5000; border-radius: 8px; padding: 12px; background: #FFFFFF; display: flex; flex-direction: column; gap: 6px;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 11px; font-weight: 800; color: #0F172A;">SPRINT 2 (MES 1.5)</span>
+          <span style="font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 4px; background: #FFF4ED; color: #fe5000;">160 HORAS</span>
+        </div>
+        <div style="font-size: 11px; font-weight: 700; color: #fe5000;">EXPERIMENTACIÓN A/B & LEAD GUIDANCE</div>
+        <div style="font-size: 11px; line-height: 1.4; color: #404040; display: flex; flex-direction: column; gap: 4px;">
+          <div><b>• Dev 1 (80 h):</b> Desarrollo de variantes A/B (Formulario corto vs. largo, precios explícitos vs. "desde").</div>
+          <div><b>• Dev 2 (80 h):</b> Flujo interactivo de cualificación previa (¿Proyecto temporal o renovación de parque?), integración con herramienta A/B (VWO/Optimizely).</div>
+        </div>
+      </div>
+
+      <!-- SPRINT 3 -->
+      <div style="border: 1px solid #E2E8F0; border-top: 3px solid #0F172A; border-radius: 8px; padding: 12px; background: #FFFFFF; display: flex; flex-direction: column; gap: 6px;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 11px; font-weight: 800; color: #0F172A;">SPRINT 3 (MES 2.5)</span>
+          <span style="font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 4px; background: #F1F5F9; color: #0F172A;">160 HORAS</span>
+        </div>
+        <div style="font-size: 11px; font-weight: 700; color: #0F172A;">AUTOMATIZACIÓN CRM & INTEGRACIÓN B2B</div>
+        <div style="font-size: 11px; line-height: 1.4; color: #404040; display: flex; flex-direction: column; gap: 4px;">
+          <div><b>• Dev 1 (80 h):</b> Portal dinámico de packs preconfigurados por perfil de empleado (Dev, Admin, Comercial) para PYMEs.</div>
+          <div><b>• Dev 2 (80 h):</b> Webhooks avanzados a CRM (HubSpot/Salesforce), regla de lead scoring automático por RUC/NIT validado en API pública.</div>
+        </div>
+      </div>
+
+      <!-- SPRINT 4 -->
+      <div style="border: 1px solid #E2E8F0; border-top: 3px solid #15803D; border-radius: 8px; padding: 12px; background: #FFFFFF; display: flex; flex-direction: column; gap: 6px;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 11px; font-weight: 800; color: #0F172A;">SPRINT 4 (MES 3.5)</span>
+          <span style="font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 4px; background: #DCFCE7; color: #15803D;">160 HORAS</span>
+        </div>
+        <div style="font-size: 11px; font-weight: 700; color: #15803D;">PERSONALIZACIÓN DINÁMICA & ESCALA</div>
+        <div style="font-size: 11px; line-height: 1.4; color: #404040; display: flex; flex-direction: column; gap: 4px;">
+          <div><b>• Dev 1 (80 h):</b> Personalización de landing pages por cohorte/fuente de tráfico (PPC vs. Orgánico vs. LinkedIn Ads).</div>
+          <div><b>• Dev 2 (80 h):</b> Enrutamiento por IP/Geolocalización automática, optimización avanzada de carga CDN y Server-Side GTM.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
 
 </div>
 
@@ -643,6 +701,23 @@ Map actionable recommendations onto an Impact vs. Effort (2x2) Matrix:
 
 </div>
 </x-dc>
+
+<!-- SCRIPT JS NATIVO PARA INTERCAMBIO DE VISTAS (TABS) -->
+<script>
+function switchView(viewId, btnElement) {
+  // Desactivar todas las vistas
+  const views = document.querySelectorAll('.view-content');
+  views.forEach(v => v.classList.remove('active'));
+
+  // Desactivar todos los botones de tab
+  const tabs = document.querySelectorAll('.tab-btn');
+  tabs.forEach(t => t.classList.remove('active'));
+
+  // Activar la vista seleccionada y su botón
+  document.getElementById(viewId).classList.add('active');
+  btnElement.classList.add('active');
+}
+</script>
 
 <script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#fe5000","options":["#fe5000","#EA580C","#141414"]},"$preview":{"width":1000,"height":2060}}'>
 class Component extends DCLogic {
