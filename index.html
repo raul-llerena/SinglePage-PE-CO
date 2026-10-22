@@ -119,11 +119,11 @@ a{color:#fe5000}a:hover{color:#d44300}
 <!-- BARRA HORIZONTAL SUPERIOR DE NAVEGACIÓN -->
 <div class="nav-header-bar">
   <div class="nav-container">
-    <button id="btn-diag" class="nav-item-btn active" type="button" onclick="switchTab('diagnosisView', 'btn-diag')">
+    <button id="btn-diag" class="nav-item-btn active" type="button" data-target="diagnosisView">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><circle cx="11" cy="14" r="3"/><line x1="13.1" y1="16.1" x2="16.5" y2="19.5"/></svg>
       1. METODOLOGÍA Y DIAGNÓSTICO
     </button>
-    <button id="btn-action" class="nav-item-btn" type="button" onclick="switchTab('actionView', 'btn-action')">
+    <button id="btn-action" class="nav-item-btn" type="button" data-target="actionView">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
       2. PLAN DE ACCIÓN Y EJECUCIÓN
     </button>
@@ -528,7 +528,7 @@ Map actionable recommendations onto an Impact vs. Effort (2x2) Matrix:
   </div>
 
   <p style="margin: 0; font-size: 12.5px; line-height: 1.5; color: #D1D5DB;">
-  <b>Idea Principal: Unificar leasein.pe y leasein.com.co en una sola plataforma multirregión elimina costos técnicos duplicados, maximiza la autoridad SEO del dominio y reduce drastically el CPL.</b> Mantener webs separadas duplica gastos tecnológicos y fragmenta marca sin beneficio.
+  <b>Idea Principal: Unificar leasein.pe y leasein.com.co en una sola plataforma multirregión elimina costos técnicos duplicados, maximiza la autoridad SEO del dominio y reduce drásticamente el CPL.</b> Mantener webs separadas duplica gastos tecnológicos y fragmenta marca sin beneficio.
   </p>
 
   <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px;">
@@ -724,39 +724,48 @@ Map actionable recommendations onto an Impact vs. Effort (2x2) Matrix:
 </div>
 </x-dc>
 
-<!-- SCRIPT JS GARANTIZADO DE CONMUTACIÓN DE SECCIONES EN EL DOM -->
+<!-- SCRIPT AUTÓNOMO CON EVENT LISTENERS DELEGADOS EN EL DOM -->
 <script>
-function switchTab(targetViewId, activeBtnId) {
-  // 1. Obtener todas las vistas y ocultarlas limpiamente
-  var views = document.querySelectorAll('.view-content');
-  for (var i = 0; i < views.length; i++) {
-    views[i].style.display = 'none';
-    views[i].classList.remove('active');
+(function() {
+  function initNavigation() {
+    var btnDiag = document.getElementById('btn-diag');
+    var btnAction = document.getElementById('btn-action');
+    var diagView = document.getElementById('diagnosisView');
+    var actionView = document.getElementById('actionView');
+
+    if (!btnDiag || !btnAction || !diagView || !actionView) {
+      setTimeout(initNavigation, 100);
+      return;
+    }
+
+    function showTab(viewToShow, viewToHide, activeBtn, inactiveBtn) {
+      viewToShow.style.display = 'flex';
+      viewToShow.classList.add('active');
+      
+      viewToHide.style.display = 'none';
+      viewToHide.classList.remove('active');
+
+      activeBtn.classList.add('active');
+      inactiveBtn.classList.remove('active');
+    }
+
+    btnDiag.addEventListener('click', function(e) {
+      e.preventDefault();
+      showTab(diagView, actionView, btnDiag, btnAction);
+    });
+
+    btnAction.addEventListener('click', function(e) {
+      e.preventDefault();
+      showTab(actionView, diagView, btnAction, btnDiag);
+    });
   }
 
-  // 2. Remover estado activo de los botones de la barra superior
-  var btns = document.querySelectorAll('.nav-item-btn');
-  for (var j = 0; j < btns.length; j++) {
-    btns[j].classList.remove('active');
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initNavigation);
+  } else {
+    initNavigation();
   }
-
-  // 3. Mostrar la vista seleccionada y activar el botón correspondiente
-  var selectedView = document.getElementById(targetViewId);
-  var selectedBtn = document.getElementById(activeBtnId);
-
-  if (selectedView) {
-    selectedView.style.display = 'flex';
-    selectedView.classList.add('active');
-  }
-  if (selectedBtn) {
-    selectedBtn.classList.add('active');
-  }
-}
-
-// Asegurar la inicialización correcta en la carga del documento
-document.addEventListener('DOMContentLoaded', function() {
-  switchTab('diagnosisView', 'btn-diag');
-});
+})();
 </script>
 
 <script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#fe5000","options":["#fe5000","#EA580C","#141414"]},"$preview":{"width":1000,"height":2060}}'>
