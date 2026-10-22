@@ -16,7 +16,7 @@ body{margin:0; background:#FAFAFA;}
 a{color:#fe5000}a:hover{color:#d44300}
 .page-wrapper { width: 100%; max-width: 1080px; margin: 0 auto; box-sizing: border-box; background: #FFFFFF; font-family: Poppins, system-ui, sans-serif; color: #1A1A1A; display: flex; flex-direction: column; min-height: 100vh; box-shadow: 0 0 20px rgba(0,0,0,0.05); }
 
-/* BARRA HORIZONTAL SUPERIOR DE NAVEGACIÓN (ESTILO BARRA DESTACADA) */
+/* BARRA HORIZONTAL SUPERIOR DE NAVEGACIÓN */
 .nav-header-bar {
   background: #fe5000;
   color: #FFFFFF;
@@ -72,7 +72,7 @@ a{color:#fe5000}a:hover{color:#d44300}
   gap: 20px;
 }
 .view-content.active {
-  display: flex;
+  display: flex !important;
 }
 
 .infographic-container { background: #F4F5F7; border-radius: 10px; padding: 18px; font-family: Poppins, system-ui, sans-serif; color: #1A1A1A; box-sizing: border-box; }
@@ -107,10 +107,11 @@ a{color:#fe5000}a:hover{color:#d44300}
     <h1 style="margin: 0; font-size: 30px; line-height: 1.1; font-weight: 800">Diagnosis Web Leasein</h1>
     <p style="margin: 4px 0 0; font-size: 13px; line-height: 1.4; color: #D4D4D4;"><b>Idea Principal: Consolidado de tres revisiones independientes con IA (Claude, ChatGPT y Gemini) para evaluar el rendimiento de conversión de las homes sin acceso directo a Analytics o CRM.</b></p>
   </div>
-  <div style="display: flex; gap: 6px; shrink: 0;">
-    <div style="font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 999px; background: #262626; color: #FFFFFF">Claude ✓</div>
-    <div style="font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 999px; background: #262626; color: #FFFFFF">ChatGPT ✓</div>
-    <div style="font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 999px; background: #262626; color: #FFFFFF">Gemini ✓</div>
+  <!-- BADGES DE AIS SIN CHECKS -->
+  <div style="display: flex; gap: 6px; flex-shrink: 0;">
+    <div style="font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 999px; background: #262626; color: #FFFFFF">Claude</div>
+    <div style="font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 999px; background: #262626; color: #FFFFFF">ChatGPT</div>
+    <div style="font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 999px; background: #262626; color: #FFFFFF">Gemini</div>
   </div>
 </div>
 </div>
@@ -118,11 +119,11 @@ a{color:#fe5000}a:hover{color:#d44300}
 <!-- BARRA HORIZONTAL SUPERIOR DE NAVEGACIÓN -->
 <div class="nav-header-bar">
   <div class="nav-container">
-    <button id="btn-diag" class="nav-item-btn active" onclick="switchTab('diagnosisView', 'btn-diag')">
+    <button id="btn-diag" class="nav-item-btn active" type="button" onclick="switchTab('diagnosisView', 'btn-diag')">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><circle cx="11" cy="14" r="3"/><line x1="13.1" y1="16.1" x2="16.5" y2="19.5"/></svg>
       1. METODOLOGÍA Y DIAGNÓSTICO
     </button>
-    <button id="btn-action" class="nav-item-btn" onclick="switchTab('actionView', 'btn-action')">
+    <button id="btn-action" class="nav-item-btn" type="button" onclick="switchTab('actionView', 'btn-action')">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
       2. PLAN DE ACCIÓN Y EJECUCIÓN
     </button>
@@ -527,7 +528,7 @@ Map actionable recommendations onto an Impact vs. Effort (2x2) Matrix:
   </div>
 
   <p style="margin: 0; font-size: 12.5px; line-height: 1.5; color: #D1D5DB;">
-  <b>Idea Principal: Unificar leasein.pe y leasein.com.co en una sola plataforma multirregión elimina costos técnicos duplicados, maximiza la autoridad SEO del dominio y reduce drásticamente el CPL.</b> Mantener webs separadas duplica gastos tecnológicos y fragmenta marca sin beneficio.
+  <b>Idea Principal: Unificar leasein.pe y leasein.com.co en una sola plataforma multirregión elimina costos técnicos duplicados, maximiza la autoridad SEO del dominio y reduce drastically el CPL.</b> Mantener webs separadas duplica gastos tecnológicos y fragmenta marca sin beneficio.
   </p>
 
   <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px;">
@@ -723,32 +724,39 @@ Map actionable recommendations onto an Impact vs. Effort (2x2) Matrix:
 </div>
 </x-dc>
 
-<!-- SCRIPT JS ROBUSTO Y EXPLÍCITO PARA INTERCAMBIO DE SECCIONES -->
+<!-- SCRIPT JS GARANTIZADO DE CONMUTACIÓN DE SECCIONES EN EL DOM -->
 <script>
-function switchTab(viewId, btnId) {
-  // 1. Ocultar todas las secciones de vista
+function switchTab(targetViewId, activeBtnId) {
+  // 1. Obtener todas las vistas y ocultarlas limpiamente
   var views = document.querySelectorAll('.view-content');
   for (var i = 0; i < views.length; i++) {
+    views[i].style.display = 'none';
     views[i].classList.remove('active');
   }
 
-  // 2. Desactivar estilo activo de los botones
-  var buttons = document.querySelectorAll('.nav-item-btn');
-  for (var j = 0; j < buttons.length; j++) {
-    buttons[j].classList.remove('active');
+  // 2. Remover estado activo de los botones de la barra superior
+  var btns = document.querySelectorAll('.nav-item-btn');
+  for (var j = 0; j < btns.length; j++) {
+    btns[j].classList.remove('active');
   }
 
-  // 3. Activar la vista y el botón seleccionados
-  var targetView = document.getElementById(viewId);
-  var targetBtn = document.getElementById(btnId);
+  // 3. Mostrar la vista seleccionada y activar el botón correspondiente
+  var selectedView = document.getElementById(targetViewId);
+  var selectedBtn = document.getElementById(activeBtnId);
 
-  if (targetView) {
-    targetView.classList.add('active');
+  if (selectedView) {
+    selectedView.style.display = 'flex';
+    selectedView.classList.add('active');
   }
-  if (targetBtn) {
-    targetBtn.classList.add('active');
+  if (selectedBtn) {
+    selectedBtn.classList.add('active');
   }
 }
+
+// Asegurar la inicialización correcta en la carga del documento
+document.addEventListener('DOMContentLoaded', function() {
+  switchTab('diagnosisView', 'btn-diag');
+});
 </script>
 
 <script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#fe5000","options":["#fe5000","#EA580C","#141414"]},"$preview":{"width":1000,"height":2060}}'>
