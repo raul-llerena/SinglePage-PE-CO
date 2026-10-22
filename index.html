@@ -16,36 +16,53 @@ body{margin:0; background:#FAFAFA;}
 a{color:#fe5000}a:hover{color:#d44300}
 .page-wrapper { width: 100%; max-width: 1080px; margin: 0 auto; box-sizing: border-box; background: #FFFFFF; font-family: Poppins, system-ui, sans-serif; color: #1A1A1A; display: flex; flex-direction: column; min-height: 100vh; box-shadow: 0 0 20px rgba(0,0,0,0.05); }
 
-/* ESTILOS DE PESTAÑAS (TABS) */
-.tabs-navigation {
+/* BARRA HORIZONTAL SUPERIOR DE NAVEGACIÓN (ESTILO BARRA DESTACADA) */
+.nav-header-bar {
+  background: #fe5000;
+  color: #FFFFFF;
   display: flex;
-  background: #1F1F1F;
-  border-bottom: 2px solid #333333;
-  padding: 0 40px;
-  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
-.tab-btn {
-  padding: 14px 20px;
+.nav-container {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.nav-item-btn {
+  flex: 1;
+  padding: 16px 20px;
   font-family: Poppins, system-ui, sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-  color: #A3A3A3;
+  font-size: 13.5px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.85);
   background: transparent;
   border: none;
-  border-bottom: 3px solid transparent;
+  border-bottom: 4px solid transparent;
   cursor: pointer;
   transition: all 0.2s ease;
   display: flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  gap: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
-.tab-btn:hover {
+.nav-item-btn:hover {
   color: #FFFFFF;
+  background: rgba(0, 0, 0, 0.08);
 }
-.tab-btn.active {
-  color: #fe5000;
-  border-bottom-color: #fe5000;
-  background: rgba(254, 80, 0, 0.05);
+.nav-item-btn.active {
+  color: #FFFFFF;
+  border-bottom-color: #FFFFFF;
+  background: rgba(0, 0, 0, 0.15);
 }
 
 .view-content {
@@ -78,7 +95,7 @@ a{color:#fe5000}a:hover{color:#d44300}
 
 <div class="page-wrapper">
 
-<!-- HEADER GENERAL -->
+<!-- HEADER COMPACTO PRINCIPAL -->
 <div style="background: #141414; color: #FFFFFF; width: 100%">
 <div style="padding: 24px 40px 18px; display: flex; flex-direction: column; gap: 10px">
 <div style="display: flex; justify-content: space-between; align-items: center">
@@ -98,20 +115,22 @@ a{color:#fe5000}a:hover{color:#d44300}
 </div>
 </div>
 
-<!-- NAVEGACIÓN DE PESTAÑAS (VISTA 1 VS VISTA 2) -->
-<div class="tabs-navigation">
-  <button class="tab-btn active" onclick="switchView('diagnosisView', this)">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-    VISTA 1: DIAGNÓSTICO (CRO & ANALÍTICA)
-  </button>
-  <button class="tab-btn" onclick="switchView('actionView', this)">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-    VISTA 2: PLAN DE ACCIÓN & EJECUCIÓN
-  </button>
+<!-- BARRA HORIZONTAL SUPERIOR DE NAVEGACIÓN -->
+<div class="nav-header-bar">
+  <div class="nav-container">
+    <button class="nav-item-btn active" onclick="switchView('diagnosisView', this)">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><circle cx="11" cy="14" r="3"/><line x1="13.1" y1="16.1" x2="16.5" y2="19.5"/></svg>
+      1. METODOLOGÍA Y DIAGNÓSTICO
+    </button>
+    <button class="nav-item-btn" onclick="switchView('actionView', this)">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      2. PLAN DE ACCIÓN Y EJECUCIÓN
+    </button>
+  </div>
 </div>
 </div>
 
-<!-- ==================== VISTA 1: DIAGNÓSTICO ==================== -->
+<!-- ==================== SECCIÓN 1: METODOLOGÍA Y DIAGNÓSTICO ==================== -->
 <div id="diagnosisView" class="view-content active">
 
   <!-- DESPLEGABLE PROPÓSITO Y METODOLOGÍA -->
@@ -172,7 +191,7 @@ a{color:#fe5000}a:hover{color:#d44300}
       <div class="phase-card">
         <div class="phase-number">06</div>
         <div class="phase-title">Fase 6: Ruta Ejecución</div>
-        <div class="phase-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fe5000" stroke-width="2"><rect x="3" y="3" width="8" height="8"/><rect x="13" y="3" width="8" height="8"/><rect x="3" y="13" width="8" height="8"/><rect x="13" y="13" width="8" height="8"/></svg></div>
+        <div class="phase-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fe5000" stroke-width="2"><rect x="3" y="3" width="8" height="8"/><rect x="13" y="3" width="8" height="8"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="8" height="8"/></svg></div>
         <ul class="phase-list"><li><b>Ola 1: Quick Wins</b></li><li>Ola 2: Core Opt.</li><li>Ola 3: Transform.</li></ul>
       </div>
     </div>
@@ -449,7 +468,7 @@ Map actionable recommendations onto an Impact vs. Effort (2x2) Matrix:
 
 </div>
 
-<!-- ==================== VISTA 2: PLAN DE ACCIÓN Y EJECUCIÓN ==================== -->
+<!-- ==================== SECCIÓN 2: PLAN DE ACCIÓN Y EJECUCIÓN ==================== -->
 <div id="actionView" class="view-content">
 
   <!-- FASE 6: RUTA ESTRATÉGICA Y HOJA DE RUTA PRIORIZADA -->
@@ -508,7 +527,7 @@ Map actionable recommendations onto an Impact vs. Effort (2x2) Matrix:
   </div>
 
   <p style="margin: 0; font-size: 12.5px; line-height: 1.5; color: #D1D5DB;">
-  <b>Idea Principal: Unificar leasein.pe y leasein.com.co en una sola plataforma multirregión elimina costos técnicos duplicados, maximiza la autoridad SEO del dominio y reduce drastically el CPL.</b> Mantener webs separadas duplica gastos tecnológicos y fragmenta marca sin beneficio.
+  <b>Idea Principal: Unificar leasein.pe y leasein.com.co en una sola plataforma multirregión elimina costos técnicos duplicados, maximiza la autoridad SEO del dominio y reduce drásticamente el CPL.</b> Mantener webs separadas duplica gastos tecnológicos y fragmenta marca sin beneficio.
   </p>
 
   <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px;">
@@ -691,6 +710,8 @@ Map actionable recommendations onto an Impact vs. Effort (2x2) Matrix:
 
 </div>
 
+</div>
+
 <!-- FOOTER -->
 <div style="margin-top: auto; width: 100%; border-top: 1px solid #E5E5E5">
 <div style="max-width: 1000px; margin: 0 auto; box-sizing: border-box; padding: 16px 40px; display: flex; justify-content: space-between; font-size: 10.5px; color: #595959">
@@ -702,18 +723,18 @@ Map actionable recommendations onto an Impact vs. Effort (2x2) Matrix:
 </div>
 </x-dc>
 
-<!-- SCRIPT JS NATIVO PARA INTERCAMBIO DE VISTAS (TABS) -->
+<!-- SCRIPT JS NATIVO PARA INTERCAMBIO DE SECCIONES DESDE LA BARRA SUPERIOR -->
 <script>
 function switchView(viewId, btnElement) {
   // Desactivar todas las vistas
   const views = document.querySelectorAll('.view-content');
   views.forEach(v => v.classList.remove('active'));
 
-  // Desactivar todos los botones de tab
-  const tabs = document.querySelectorAll('.tab-btn');
+  // Desactivar todos los botones de la barra superior
+  const tabs = document.querySelectorAll('.nav-item-btn');
   tabs.forEach(t => t.classList.remove('active'));
 
-  // Activar la vista seleccionada y su botón
+  // Activar la vista seleccionada y el botón activo
   document.getElementById(viewId).classList.add('active');
   btnElement.classList.add('active');
 }
