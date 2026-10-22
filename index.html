@@ -478,104 +478,154 @@ Map actionable recommendations onto an Impact vs. Effort (2x2) Matrix:
 </div>
 </div>
 
-<!-- NUEVA SECCIÓN: PLAN DE EJECUCIÓN TÁCTICO (SPRINT DE 1 SEMANA / 2 DEVS SEMI-SENIOR) -->
+<!-- SECCIÓN: PLAN DE TRABAJO Y ESTIMACIÓN DE HORAS (SPRINT DE 2 SEMANAS / SPRINT 1) -->
 <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 10px;">
 <div style="display: flex; justify-content: space-between; align-items: baseline;">
-  <h2 style="margin: 0; font-size: 18px; font-weight: 800; color: #0F172A;">PLAN DE TRABAJO Y EJECUCIÓN TÁCTICA (SPRINT DE 1 SEMANA)</h2>
-  <div style="font-size: 11px; font-weight: 700; color: {{accent}}">CAPACIDAD: 2 DEVS SEMI-SENIOR</div>
+  <h2 style="margin: 0; font-size: 18px; font-weight: 800; color: #0F172A;">PLAN DE TRABAJO Y ESTIMACIÓN DE HORAS (SPRINT 1 · 2 SEMANAS)</h2>
+  <div style="font-size: 11px; font-weight: 700; color: {{accent}}">2 DEVS SEMI-SENIOR · 160 H TOTALES</div>
 </div>
-<p style="margin: 0; font-size: 12px; color: #595959"><b>Idea Principal: Plan de trabajo de 5 días hábiles (iniciando mañana) para ejecutar las modificaciones en 6 vistas clave, unificación de arquitectura multipaís y fase intensiva de pruebas.</b></p>
+<p style="margin: 0; font-size: 12px; color: #595959"><b>Idea Principal: Plan de ejecución de 10 días hábiles (2 semanas) estructurado en 5 fases técnicas con estimación de horas dedicadas por desarrollador para las 6 vistas y unificación multipaís.</b></p>
 
-<!-- MATRIZ DE ALCANCE Y VISTAS -->
-<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px;">
-  <div style="border: 1px solid #E5E5E5; border-radius: 10px; padding: 14px; background: #FFFFFF; display: flex; flex-direction: column; gap: 8px;">
-    <div style="font-size: 12px; font-weight: 700; color: #0F172A; border-bottom: 2px solid {{accent}}; padding-bottom: 4px;">1. ALCANCE DE VISTAS A MODIFICAR / UNIFICAR (6 VISTAS)</div>
-    <div style="font-size: 11.5px; line-height: 1.45; color: #404040; display: flex; flex-direction: column; gap: 4px;">
-      <div><b>• Vista 1 (Home PE / Global):</b> Ajuste de jerarquía de productos, etiquetas en campos y cotizador directo.</div>
-      <div><b>• Vista 2 (Home CO):</b> Integración de cotizador COP, badges de confianza local y formulario en 2 pasos.</div>
-      <div><b>• Vista 3 (Modal / Formulario Cotización):</b> Etiquetas visibles, RUC/NIT en paso 2 y micro-copy de expectativa.</div>
-      <div><b>• Vista 4 (Página de Gracias / Post-CTA):</b> Enrutamiento inmediato a WhatsApp prellenado o agenda de llamada.</div>
-      <div><b>• Vista 5 (Página de Servicios / Categorías):</b> Corrección de enlaces rotos y redirección hacia el flujo principal.</div>
-      <div><b>• Vista 6 (Página de Prueba Social / Casos):</b> Módulo de logos e historias de clientes segregados por región.</div>
-    </div>
+<!-- TARJETAS DE RESUMEN DE CAPACIDAD DE HORAS -->
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px;">
+  <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 10px 12px;">
+    <div style="font-size: 10px; color: #64748B; font-weight: 600;">DURACIÓN SPRINT 1</div>
+    <div style="font-size: 16px; font-weight: 800; color: #0F172A; margin-top: 2px;">2 Semanas (10 días)</div>
   </div>
-
-  <div style="border: 1px solid #E5E5E5; border-radius: 10px; padding: 14px; background: #FFFFFF; display: flex; flex-direction: column; gap: 8px;">
-    <div style="font-size: 12px; font-weight: 700; color: #0F172A; border-bottom: 2px solid #404040; padding-bottom: 4px;">2. ASIGNACIÓN DE ROLES (2 DEVS SEMI-SENIOR)</div>
-    <div style="font-size: 11.5px; line-height: 1.45; color: #404040; display: flex; flex-direction: column; gap: 6px;">
-      <div><b>• Dev 1 (Frontend / UX Lead):</b> Maquetación en Poppins, componentes compartidos (UI Kit), refactorización de formularios, micro-copys, diseño adaptable y validaciones de campos en cliente.</div>
-      <div><b>• Dev 2 (Fullstack / MarTech & SEO):</b> Unificación de arquitectura multirregión (rutas `/pe/` y `/co/` o subdominios), lógica de cotizador en COP/PEN, etiquetas <code style="color:#fe5000">hreflang</code>, WhatsApp prellenado y capas de eventos GTM.</div>
-    </div>
+  <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 10px 12px;">
+    <div style="font-size: 10px; color: #64748B; font-weight: 600;">HORAS DEV 1 (FRONT/UX)</div>
+    <div style="font-size: 16px; font-weight: 800; color: #0F172A; margin-top: 2px;">80 Horas</div>
+  </div>
+  <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 10px 12px;">
+    <div style="font-size: 10px; color: #64748B; font-weight: 600;">HORAS DEV 2 (FULLSTACK/SEO)</div>
+    <div style="font-size: 16px; font-weight: 800; color: #0F172A; margin-top: 2px;">80 Horas</div>
+  </div>
+  <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 10px 12px;">
+    <div style="font-size: 10px; color: #64748B; font-weight: 600;">TOTAL HORAS SPRINT 1</div>
+    <div style="font-size: 16px; font-weight: 800; color: {{accent}}; margin-top: 2px;">160 Horas Hombre</div>
   </div>
 </div>
 
-<!-- CRONOGRAMA DE 5 DÍAS DÍA A DÍA -->
+<!-- MATRIZ DE FASES CON HORAS Y TAREAS (SPRINT 1) -->
 <div style="border: 1px solid #E5E5E5; border-radius: 10px; overflow: hidden; font-size: 11.5px;">
-  <div style="background: #141414; color: #FFFFFF; padding: 10px 14px; font-weight: 700; font-size: 12px; display: flex; justify-content: space-between;">
-    <span>3. CRONOGRAMA DÍA A DÍA (SPRINT DE 1 SEMANA — CONTANDO DESDE MAÑANA)</span>
-    <span style="color: {{accent}};">ENTREGA ESTIMADA: DÍA 5</span>
+  <div style="background: #141414; color: #FFFFFF; padding: 10px 14px; font-weight: 700; font-size: 12px; display: flex; justify-content: space-between; align-items: center;">
+    <span>ESTIMACIÓN DE HORAS POR FASE (SPRINT 1) — DESGLOSE TÁCTICO</span>
+    <span style="color: {{accent}};">10 DÍAS HÁBILES</span>
   </div>
-  <div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); background: #FAFAFA; border-top: 1px solid #EEEEEE;">
-    
-    <!-- DÍA 1 -->
-    <div style="padding: 10px; border-right: 1px solid #EEEEEE; display: flex; flex-direction: column; gap: 4px;">
-      <div style="font-weight: 800; color: {{accent}};">DÍA 1 (MAÑANA)</div>
-      <div style="font-weight: 700; color: #0F172A; font-size: 11px;">Arquitectura & Setup</div>
-      <div style="color: #525252; font-size: 10.5px; line-height: 1.35;">
-        <b>Dev 1:</b> Corregir textos CO (cédula, Cámara Com.), etiquetas visibles en Vistas 1, 2 y 3.<br>
-        <b>Dev 2:</b> Setup de repositorio unificado, rutas `/pe/` `/co/` y etiquetas `hreflang`.
-      </div>
-    </div>
 
-    <!-- DÍA 2 -->
-    <div style="padding: 10px; border-right: 1px solid #EEEEEE; display: flex; flex-direction: column; gap: 4px;">
-      <div style="font-weight: 800; color: #0F172A;">DÍA 2</div>
-      <div style="font-weight: 700; color: #0F172A; font-size: 11px;">Cotizador & Modales</div>
-      <div style="color: #525252; font-size: 10.5px; line-height: 1.35;">
-        <b>Dev 1:</b> Modal de 2 pasos (RUC/NIT al final) y diseño de Vista 4 (Página Gracias).<br>
-        <b>Dev 2:</b> Lógica de cotizador para CO en COP y enrutamiento dinámico a WhatsApp prellenado.
-      </div>
-    </div>
-
-    <!-- DÍA 3 -->
-    <div style="padding: 10px; border-right: 1px solid #EEEEEE; display: flex; flex-direction: column; gap: 4px;">
-      <div style="font-weight: 800; color: #0F172A;">DÍA 3</div>
-      <div style="font-weight: 700; color: #0F172A; font-size: 11px;">Prueba Social & Links</div>
-      <div style="color: #525252; font-size: 10.5px; line-height: 1.35;">
-        <b>Dev 1:</b> Arreglar enlace "Servicios" (Vista 5), reemplazar mailto web por cliente local.<br>
-        <b>Dev 2:</b> Módulo de prueba social segregado por país en Vista 6 (Logos CO/PE).
-      </div>
-    </div>
-
-    <!-- DÍA 4 -->
-    <div style="padding: 10px; border-right: 1px solid #EEEEEE; display: flex; flex-direction: column; gap: 4px;">
-      <div style="font-weight: 800; color: #0F172A;">DÍA 4</div>
-      <div style="font-weight: 700; color: #0F172A; font-size: 11px;">Medición & MarTech</div>
-      <div style="color: #525252; font-size: 10.5px; line-height: 1.35;">
-        <b>Dev 1:</b> Polish de responsive, tipografía Poppins y alineación de botones CTA.<br>
-        <b>Dev 2:</b> Estandarización de dataLayer en GTM (eventos de cotizador, WhatsApp y formulario por país).
-      </div>
-    </div>
-
-    <!-- DÍA 5 -->
-    <div style="padding: 10px; display: flex; flex-direction: column; gap: 4px; background: #FFF4ED;">
-      <div style="font-weight: 800; color: #15803D;">DÍA 5</div>
-      <div style="font-weight: 700; color: #0F172A; font-size: 11px;">Fase Testing & Deploy</div>
-      <div style="color: #525252; font-size: 10.5px; line-height: 1.35;">
-        <b>Ambos Devs:</b> QA cruzado (Desktop/Mobile), pruebas de envío de leads en staging y pase a producción.
-      </div>
-    </div>
-
+  <div style="display: grid; grid-template-columns: minmax(0, 1fr) 130px 110px 110px; background: #F5F5F5; font-size: 11px; font-weight: 700; color: #404040; border-bottom: 1px solid #E5E5E5;">
+    <div style="padding: 8px 12px;">Fase y Entregables Tácticos</div>
+    <div style="padding: 8px 6px; text-align: center;">Días Estimados</div>
+    <div style="padding: 8px 6px; text-align: center;">Dev 1 (Front)</div>
+    <div style="padding: 8px 6px; text-align: center;">Dev 2 (Fullstack)</div>
   </div>
+
+  <!-- FASE 1 -->
+  <div style="display: grid; grid-template-columns: minmax(0, 1fr) 130px 110px 110px; border-bottom: 1px solid #EEEEEE; background: #FFFFFF;">
+    <div style="padding: 10px 12px;">
+      <b>Fase 1: Setup de Arquitectura, Tipografía & Vistas 1-2 (Home PE/CO)</b><br>
+      <span style="font-size: 10.5px; color: #64748B;">Configuración de repositorio unificado, migración a Poppins, corrección de textos/términos en Colombia y etiquetas en campos.</span>
+    </div>
+    <div style="padding: 10px 6px; text-align: center; color: #0F172A; font-weight: 700;">Días 1–2</div>
+    <div style="padding: 10px 6px; text-align: center; font-weight: 700;">16 h</div>
+    <div style="padding: 10px 6px; text-align: center; font-weight: 700;">16 h</div>
+  </div>
+
+  <!-- FASE 2 -->
+  <div style="display: grid; grid-template-columns: minmax(0, 1fr) 130px 110px 110px; border-bottom: 1px solid #EEEEEE; background: #FFFFFF;">
+    <div style="padding: 10px 12px;">
+      <b>Fase 2: Cotizador Multipaís, Modales & Flow Post-CTA (Vistas 3-4)</b><br>
+      <span style="font-size: 10.5px; color: #64748B;">Cotizador con precios en COP/PEN, formulario en 2 pasos (RUC/NIT al final), redirección a WhatsApp prellenado y Página de Gracias.</span>
+    </div>
+    <div style="padding: 10px 6px; text-align: center; color: #0F172A; font-weight: 700;">Días 3–5</div>
+    <div style="padding: 10px 6px; text-align: center; font-weight: 700;">20 h</div>
+    <div style="padding: 10px 6px; text-align: center; font-weight: 700;">16 h</div>
+  </div>
+
+  <!-- FASE 3 -->
+  <div style="display: grid; grid-template-columns: minmax(0, 1fr) 130px 110px 110px; border-bottom: 1px solid #EEEEEE; background: #FFFFFF;">
+    <div style="padding: 10px 12px;">
+      <b>Fase 3: Prueba Social Local, Vistas 5-6 & Redirecciones</b><br>
+      <span style="font-size: 10.5px; color: #64748B;">Módulo de prueba social segregado por país (logos/casos CO y PE), corrección de la Vista 5 (Servicios) y ajuste de cliente mailto.</span>
+    </div>
+    <div style="padding: 10px 6px; text-align: center; color: #0F172A; font-weight: 700;">Días 6–7</div>
+    <div style="padding: 10px 6px; text-align: center; font-weight: 700;">14 h</div>
+    <div style="padding: 10px 6px; text-align: center; font-weight: 700;">14 h</div>
+  </div>
+
+  <!-- FASE 4 -->
+  <div style="display: grid; grid-template-columns: minmax(0, 1fr) 130px 110px 110px; border-bottom: 1px solid #EEEEEE; background: #FFFFFF;">
+    <div style="padding: 10px 12px;">
+      <b>Fase 4: Integración MarTech, Eventos GTM & SEO Internacional</b><br>
+      <span style="font-size: 10.5px; color: #64748B;">Implementación de <code style="color:#fe5000">hreflang</code> por región, estructuración de dataLayer para eventos comunes de conversión en GTM y vinculación CRM.</span>
+    </div>
+    <div style="padding: 10px 6px; text-align: center; color: #0F172A; font-weight: 700;">Días 8–9</div>
+    <div style="padding: 10px 6px; text-align: center; font-weight: 700;">12 h</div>
+    <div style="padding: 10px 6px; text-align: center; font-weight: 700;">16 h</div>
+  </div>
+
+  <!-- FASE 5 -->
+  <div style="display: grid; grid-template-columns: minmax(0, 1fr) 130px 110px 110px; background: #FFF4ED;">
+    <div style="padding: 10px 12px;">
+      <b style="color: #15803D;">Fase 5: QA Testing Intensivo, Optimización Mobile & Deploy</b><br>
+      <span style="font-size: 10.5px; color: #64748B;">Pruebas cruzadas de usabilidad, auditoría de disparo de píxeles, optimización de velocidad de carga (Web Vitals) y migración a producción.</span>
+    </div>
+    <div style="padding: 10px 6px; text-align: center; color: #15803D; font-weight: 800;">Día 10</div>
+    <div style="padding: 10px 6px; text-align: center; font-weight: 800; color: #15803D;">18 h</div>
+    <div style="padding: 10px 6px; text-align: center; font-weight: 800; color: #15803D;">18 h</div>
+  </div>
+
 </div>
 
-<!-- FASE DE TESTING & VALIDACIÓN -->
-<div style="background: #F4F5F7; border: 1px solid #E2E8F0; border-radius: 8px; padding: 12px 16px; display: flex; flex-direction: column; gap: 6px;">
-  <div style="font-size: 11.5px; font-weight: 700; color: #0F172A;">4. PROTOCOLO DE LA FASE DE TESTING (CHECKLIST DÍA 5)</div>
-  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; font-size: 11px; color: #404040;">
-    <div><b>• Pruebas Funcionales:</b> Envío de formularios desde PE y CO, apertura correcta de WhatsApp con variables de ciudad/laptops y funcionamiento del cotizador.</div>
-    <div><b>• Pruebas de UX/Mobile:</b> Verificación de visualización en dispositivos iOS y Android, legibilidad de etiquetas e interacción en modales.</div>
-    <div><b>• Pruebas de Medición:</b> Disparo correcto de eventos en Google Tag Manager (GTM) y prueba de atribución de leads en CRM por país.</div>
+<!-- ESTIMACIÓN DE LOS SIGUIENTES 3 SPRINTS (SPRINTS 2, 3 Y 4) -->
+<div style="display: flex; flex-direction: column; gap: 10px; margin-top: 6px;">
+  <div style="display: flex; justify-content: space-between; align-items: baseline;">
+    <h3 style="margin: 0; font-size: 15px; font-weight: 800; color: #0F172A;">HOJA DE RUTA DE EVOLUCIÓN: SIGUIENTES 3 SPRINTS (SPRINTS 2–4)</h3>
+    <span style="font-size: 11px; font-weight: 700; color: #64748B;">CAPACIDAD ESTIMADA: 480 HORAS HOMBRE HASTA MES 3</span>
+  </div>
+  <p style="margin: 0; font-size: 12px; color: #595959"><b>Idea Principal: Planificación estratégica a mediano plazo (Sprints 2 a 4) para escalabilidad de experimentos A/B, personalización avanzada por geolocalización y automatización de lead scoring en CRM.</b></p>
+
+  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px;">
+    
+    <!-- SPRINT 2 -->
+    <div style="border: 1px solid #E2E8F0; border-top: 3px solid #fe5000; border-radius: 8px; padding: 12px; background: #FFFFFF; display: flex; flex-direction: column; gap: 6px;">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-size: 11px; font-weight: 800; color: #0F172A;">SPRINT 2 (MES 1.5)</span>
+        <span style="font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 4px; background: #FFF4ED; color: #fe5000;">160 HORAS</span>
+      </div>
+      <div style="font-size: 11px; font-weight: 700; color: #fe5000;">EXPERIMENTACIÓN A/B & LEAD GUIDANCE</div>
+      <div style="font-size: 11px; line-height: 1.4; color: #404040; display: flex; flex-direction: column; gap: 4px;">
+        <div><b>• Dev 1 (80 h):</b> Desarrollo de variantes A/B (Formulario corto vs. largo, precios explícitos vs. "desde").</div>
+        <div><b>• Dev 2 (80 h):</b> Flujo interactivo de cualificación previa (¿Proyecto temporal o renovación de parque?), integración con herramienta A/B (VWO/Optimizely).</div>
+      </div>
+    </div>
+
+    <!-- SPRINT 3 -->
+    <div style="border: 1px solid #E2E8F0; border-top: 3px solid #0F172A; border-radius: 8px; padding: 12px; background: #FFFFFF; display: flex; flex-direction: column; gap: 6px;">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-size: 11px; font-weight: 800; color: #0F172A;">SPRINT 3 (MES 2.5)</span>
+        <span style="font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 4px; background: #F1F5F9; color: #0F172A;">160 HORAS</span>
+      </div>
+      <div style="font-size: 11px; font-weight: 700; color: #0F172A;">AUTOMATIZACIÓN CRM & INTEGRACIÓN B2B</div>
+      <div style="font-size: 11px; line-height: 1.4; color: #404040; display: flex; flex-direction: column; gap: 4px;">
+        <div><b>• Dev 1 (80 h):</b> Portal dinámico de packs preconfigurados por perfil de empleado (Dev, Admin, Comercial) para PYMEs.</div>
+        <div><b>• Dev 2 (80 h):</b> Webhooks avanzados a CRM (HubSpot/Salesforce), regla de lead scoring automático por RUC/NIT validado en API pública.</div>
+      </div>
+    </div>
+
+    <!-- SPRINT 4 -->
+    <div style="border: 1px solid #E2E8F0; border-top: 3px solid #15803D; border-radius: 8px; padding: 12px; background: #FFFFFF; display: flex; flex-direction: column; gap: 6px;">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-size: 11px; font-weight: 800; color: #0F172A;">SPRINT 4 (MES 3.5)</span>
+        <span style="font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 4px; background: #DCFCE7; color: #15803D;">160 HORAS</span>
+      </div>
+      <div style="font-size: 11px; font-weight: 700; color: #15803D;">PERSONALIZACIÓN DINÁMICA & ESCALA</div>
+      <div style="font-size: 11px; line-height: 1.4; color: #404040; display: flex; flex-direction: column; gap: 4px;">
+        <div><b>• Dev 1 (80 h):</b> Personalización de landing pages por cohorte/fuente de tráfico (PPC vs. Orgánico vs. LinkedIn Ads).</div>
+        <div><b>• Dev 2 (80 h):</b> Enrutamiento por IP/Geolocalización automática, optimización avanzada de carga CDN y Server-Side GTM.</div>
+      </div>
+    </div>
+
   </div>
 </div>
 
