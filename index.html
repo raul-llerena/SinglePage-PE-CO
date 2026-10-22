@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<title>Diagnosis Web Leasein</title>
+<title>Diagnóstico Web Leasein</title>
 <script src="./vendor/react.js"></script>
 <script src="./vendor/react-dom.js"></script>
 <script src="./support.js"></script>
@@ -104,8 +104,8 @@ a{color:#fe5000}a:hover{color:#d44300}
 </div>
 <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 20px;">
   <div>
-    <h1 style="margin: 0; font-size: 30px; line-height: 1.1; font-weight: 800">Diagnosis Web Leasein</h1>
-    <p style="margin: 4px 0 0; font-size: 13px; line-height: 1.4; color: #D4D4D4;"><b>Idea Principal: Consolidado de tres revisiones independientes con IA (Claude, ChatGPT y Gemini) para evaluar el rendimiento de conversión de las homes sin acceso directo a Analytics o CRM.</b></p>
+    <h1 style="margin: 0; font-size: 30px; line-height: 1.1; font-weight: 800">Diagnóstico Web Leasein</h1>
+    <p style="margin: 4px 0 0; font-size: 13px; line-height: 1.4; color: #D4D4D4;"><b>Idea Principal: Diagnóstico híbrido que combina la revisión cualitativa de las páginas de inicio (Claude, ChatGPT y Gemini) con datos agregados de GA4 y CRM para 2026.</b></p>
   </div>
   <!-- BADGES DE AIS SIN CHECKS -->
   <div style="display: flex; gap: 6px; flex-shrink: 0;">
@@ -134,12 +134,36 @@ a{color:#fe5000}a:hover{color:#d44300}
 <!-- ==================== SECCIÓN 1: METODOLOGÍA Y DIAGNÓSTICO ==================== -->
 <div id="diagnosisView" class="view-content active">
 
+  <!-- FASE 1: RESUMEN EJECUTIVO (BLOQUE INTEGRADO AL INICIO) -->
+  <div style="background: #141414; color: #FFFFFF; border-left: 4px solid {{accent}}; border-radius: 8px; padding: 18px 22px; display: flex; flex-direction: column; gap: 10px;">
+    <div style="font-size: 11px; font-weight: 700; letter-spacing: 1.5px; color: {{accent}};">FASE 1: RESUMEN EJECUTIVO Y DIAGNÓSTICO ESTRATÉGICO</div>
+    <p style="margin: 0; font-size: 13.5px; line-height: 1.5; color: #E5E7EB;">
+      <b>Idea Principal: Cada sitio tiene la mitad de la respuesta. Unificar la prueba social y precios de Perú con la velocidad de captura de Colombia crea la plantilla maestra de mayor ROI.</b>
+    </p>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 4px; font-size: 12px; line-height: 1.45;">
+      <div style="background: #1F1F1F; border: 1px solid #333333; border-radius: 6px; padding: 12px;">
+        <b style="color: #fe5000;">Top 3 Cuellos de Botella:</b>
+        <div style="color: #D1D5DB; margin-top: 4px;">
+          1. CO opera a ciegas sin cotizador ni precios visibles.<br>
+          2. PE dispersa usuarios con exceso de productos compitiendo antes de cotizar.<br>
+          3. Ambos sitios carecen de claridad sobre los pasos tras enviar el formulario.
+        </div>
+      </div>
+      <div style="background: #1F1F1F; border: 1px solid #333333; border-radius: 6px; padding: 12px;">
+        <b style="color: #4ADE80;">Hipótesis Central PE vs. CO:</b>
+        <div style="color: #D1D5DB; margin-top: 4px;">
+          La transparencia de tarifas e incentivos de confianza de PE eleva la intención del lead, mientras que la captura frontal de CO acelera la conversión. Unificar ambas fortalezas incrementará la tasa global de conversión de tráfico a oportunidad calificada.
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- DESPLEGABLE PROPÓSITO Y METODOLOGÍA -->
   <details style="cursor: pointer; background: #1F1F1F; border: 1px solid #333333; border-left: 4px solid {{accent}}; border-radius: 6px; padding: 12px 16px;">
-  <summary style="font-size: 11.5px; font-weight: 700; letter-spacing: 1px; color: {{accent}}; outline: none;">VER PROPÓSITO Y JUSTIFICACIÓN METODOLÓGICA DEL AUDIT</summary>
+  <summary style="font-size: 11.5px; font-weight: 700; letter-spacing: 1px; color: {{accent}}; outline: none;">VER PROPÓSITO Y JUSTIFICACIÓN METODOLÓGICA DE LA AUDITORÍA</summary>
   <div style="margin-top: 12px; display: flex; flex-direction: column; gap: 12px;">
   <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #D4D4D4">
-  <b>Idea Principal: Operar portales B2B multirregionales requiere alinear UX y CRO con los matices del mercado local para impulsar la generación de leads cualificados (MQL/SQL).</b> Este diagnóstico cualitativo evalúa el rendimiento, la fricción de conversión y los embudos de captación en Leasein Perú y Colombia para establecer mejores prácticas unificadas.
+  <b>Idea Principal: Operar portales B2B multirregionales requiere alinear UX y CRO con los matices del mercado local para impulsar la generación de leads cualificados (MQL/SQL).</b> Este diagnóstico evalúa el rendimiento, la fricción de conversión y los embudos de captación en Leasein Perú y Colombia para establecer mejores prácticas unificadas.
   </p>
 
   <div class="infographic-container">
@@ -158,7 +182,7 @@ a{color:#fe5000}a:hover{color:#d44300}
         <div class="phase-number">01</div>
         <div class="phase-title">Fase 1: Resumen Ejecutivo</div>
         <div class="phase-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fe5000" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><circle cx="11" cy="14" r="3"/><line x1="13.1" y1="16.1" x2="16.5" y2="19.5"/></svg></div>
-        <ul class="phase-list"><li><b>Minto Pyramid Principle</b></li><li>Top 3 Botellas</li><li>Hipótesis Central</li></ul>
+        <ul class="phase-list"><li><b>Minto Pyramid Principle</b></li><li>Top 3 cuellos de botella</li><li>Hipótesis Central</li></ul>
         <div class="phase-arrow"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l14 9-14 9z"/></svg></div>
       </div>
       <div class="phase-card">
@@ -268,6 +292,7 @@ Map actionable recommendations onto an Impact vs. Effort (2x2) Matrix:
 - Structure: Utilize Markdown tables for the KPI Scorecard and the Prioritization Matrix.
 - Before delivering the final report, indicate if you require any specific clarification regarding the business model, current metrics, or target markets, or proceed directly to generating the full strategic proposal.</div>
   </details>
+  <div style="font-size: 10.5px; color: #737373; font-style: italic; margin-top: 4px;">* Nota: Plazos adaptados al alcance real del proyecto.</div>
 
   <!-- FASE 2: ANALÍTICA Y EVOLUCIÓN DE LEADS -->
   <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 8px;">
@@ -286,7 +311,7 @@ Map actionable recommendations onto an Impact vs. Effort (2x2) Matrix:
       </div>
       <div style="background: #141414; border: 1px solid #262626; border-radius: 6px; padding: 10px 12px;">
         <div style="font-size: 10px; color: #A3A3A3; font-weight: 600;">MQL</div>
-        <div style="font-size: 18px; font-weight: 800; color: #FFFFFF;">2,074</div>
+        <div style="font-size: 18px; font-weight: 800; color: #FFFFFF;">2,074 <span style="font-size: 10px; font-weight: 400; color: #F87171;">[DATO POR CONFIRMAR: Reconciliar 6.5% vs 3.4% del gráfico]</span></div>
       </div>
       <div style="background: #141414; border: 1px solid #262626; border-radius: 6px; padding: 10px 12px;">
         <div style="font-size: 10px; color: #A3A3A3; font-weight: 600;">SQL (LEADS CALIFICADOS)</div>
@@ -359,32 +384,32 @@ Map actionable recommendations onto an Impact vs. Effort (2x2) Matrix:
 
         <rect x="634" y="42.4" width="36" height="137.6" fill="#fe5000" rx="3"/>
         <text x="652" y="36.4" fill="#FFFFFF" font-size="9.5" font-weight="700" text-anchor="middle">4.3%</text>
-        <text x="652" y="194" fill="#A3A3A3" font-size="10" text-anchor="middle">Oct</text>
+        <text x="652" y="194" fill="#A3A3A3" font-size="10" text-anchor="middle">Oct*</text>
       </svg>
 
-      <!-- NOTA EXPLICATIVA SOBRE INFORMACIÓN INCOMPLETA -->
+      <!-- NOTA EXPLICATIVA SOBRE INFORMACIÓN INCOMPLETA Y AGREGACIÓN -->
       <div style="font-size: 10px; color: #A3A3A3; font-style: italic; border-top: 1px stroke #262626; padding-top: 6px;">
-        * Nota: No se cuenta con la información completa de leads para la totalidad del año 2026.
+        * Nota: Datos de tráfico y conversión consolidados a nivel agregados (PE+CO); falta el desglose individual por país. Octubre es un mes parcial (corte al 20/10/2026) y la información de leads del año 2026 no se encuentra completa.
       </div>
     </div>
 
     <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px;">
       <div style="background: #141414; border: 1px solid #262626; border-radius: 6px; padding: 12px;">
-        <div style="font-size: 11px; font-weight: 700; color: #4ADE80; margin-bottom: 4px;">EFICIENCIA SQL / TRÁFICO (SEP)</div>
+        <div style="font-size: 11px; font-weight: 700; color: #4ADE80; margin-bottom: 4px;">SEP ACUMULADO (SQL TOTALES / TRÁFICO TOTAL)</div>
         <div style="font-size: 12px; line-height: 1.45; color: #D4D4D4;">
-          <b>Idea Principal: El ratio global SEP alcanza un 0.90% promedio acumulado[cite: 3, 4].</b> Jun (48 SQLs, 10% conv. comercial) y Ago (61 SQLs, 10.9% conv. comercial) representan los picos de máxima calificación de demanda sobre el tráfico entrante[cite: 4].
+          <b>Idea Principal: El ratio global SEP alcanza un 0.90% acumulado.</b> Jun (48 SQLs) y Ago (61 SQLs) representan los volúmenes absolutos más altos de calificación sobre la demanda entrante, destacando también Sep con 59 SQLs.
         </div>
       </div>
       <div style="background: #141414; border: 1px solid #262626; border-radius: 6px; padding: 12px;">
         <div style="font-size: 11px; font-weight: 700; color: #EAB308; margin-bottom: 4px;">TRÁFICO VS. CONVERSIÓN</div>
         <div style="font-size: 12px; line-height: 1.45; color: #D4D4D4;">
-          <b>Idea Principal: El volumen de tráfico por sí solo no garantiza más leads[cite: 3, 4].</b> Ago tuvo máximo tráfico (4,162) pero cayó a 3.4% MQL[cite: 3], mientras Septiembre generó más MQLs (232) y 59 SQLs con menos visitas totales (3,563)[cite: 3, 4].
+          <b>Idea Principal: El volumen de tráfico por sí solo no garantiza más leads.</b> Ago tuvo el tráfico máximo de 4,162 usuarios, mientras que Sep registró 232 MQLs <span style="font-size: 10px; color: #F87171;">[DATO POR CONFIRMAR: Reconciliar tasa reportada en texto vs gráfico]</span> y 59 SQLs con 3,563 visitas.
         </div>
       </div>
       <div style="background: #141414; border: 1px solid #262626; border-radius: 6px; padding: 12px;">
         <div style="font-size: 11px; font-weight: 700; color: {{accent}}; margin-bottom: 4px;">OPORTUNIDAD CRO</div>
         <div style="font-size: 12px; line-height: 1.45; color: #D4D4D4;">
-          <b>Idea Principal: Base de tráfico estable entre 3,500 y 4,100 usuarios mensuales[cite: 3].</b> Optimizar UX de formularios y prueba social elevará la línea base de MQL a >5.0% y SEP a >1.5%.
+          <b>Idea Principal: Tráfico promedio de ~3,200 visitas/mes, con máximo de 4,162 en agosto.</b> Optimizar UX de formularios y prueba social busca consolidar la tasa de conversión en la parte alta de la tendencia histórica.
         </div>
       </div>
     </div>
@@ -393,9 +418,10 @@ Map actionable recommendations onto an Impact vs. Effort (2x2) Matrix:
   </details>
   </div>
 
-  <!-- FASE 1 & FASE 3 & FASE 4: DIAGNÓSTICO Y UX/UI Y LOCALIZACIÓN POR PAÍS -->
+  <!-- FASE 3 & FASE 4: DIAGNÓSTICO Y UX/UI Y LOCALIZACIÓN POR PAÍS -->
   <div style="display: flex; flex-direction: column; gap: 10px;">
-  <h2 style="margin: 0; font-size: 17px; font-weight: 800; color: #0F172A;">FASE 1, 3 & 4: Diagnóstico de UX/UI, Fricción y SEO/Localización Multipaís</h2>
+  <h2 style="margin: 0; font-size: 17px; font-weight: 800; color: #0F172A;">FASE 3 & 4: Auditoría CRO, UX/UI, Fricción y SEO Internacional</h2>
+  <p style="margin: 0; font-size: 11.5px; color: #64748B; font-style: italic;">* Aspectos de SEO técnico profundo e infraestructura hreflang no evaluados en esta revisión cualitativa.</p>
   <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px">
   <div style="border: 1px solid #E5E5E5; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 10px; background: #FFFFFF">
   <div style="display: flex; justify-content: space-between; align-items: baseline">
@@ -414,7 +440,7 @@ Map actionable recommendations onto an Impact vs. Effort (2x2) Matrix:
   <div>· Cinco productos compiten antes de cotizar</div>
   <div>· No explica qué pasa después de enviar la cotización</div>
   <div>· Campos del formulario sin etiqueta, solo placeholder</div>
-  <div>· "Servicios" roto y correo abre Gmail web</div>
+  <div>· Enlace "Servicios" roto y correo abre Gmail web</div>
   </div>
   </div>
 
@@ -475,34 +501,33 @@ Map actionable recommendations onto an Impact vs. Effort (2x2) Matrix:
   <!-- FASE 6: RUTA ESTRATÉGICA Y HOJA DE RUTA PRIORIZADA -->
   <div style="display: flex; flex-direction: column; gap: 10px;">
   <h2 style="margin: 0; font-size: 18px; font-weight: 800; color: #0F172A;">FASE 6: Ruta Estratégica y Plan de Ejecución Priorizado</h2>
-  <p style="margin: 0; font-size: 12px; color: #595959"><b>Idea Principal: Hoja de ruta por fases priorizada por impacto: Quick Wins inmediatos de redacción y localización, alineación de embudo en el Mes 1 y pruebas A/B en Meses 2-3.</b></p>
+  <p style="margin: 0; font-size: 12px; color: #595959"><b>Idea Principal: Hoja de ruta por fases priorizada por impacto: Quick Wins inmediatos de redacción y localización en Sprint 1, unificación MarTech en Sprint 1-2 y optimización A/B continua.</b></p>
   <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px">
   <div style="border-top: 3px solid {{accent}}; background: #FAFAFA; border-radius: 0 0 8px 8px; padding: 14px; display: flex; flex-direction: column; gap: 6px">
-  <div style="font-size: 11px; font-weight: 700; color: #9A3412">OLA 1: SEMANAS 1–2 · QUICK WINS</div>
+  <div style="font-size: 11px; font-weight: 700; color: #9A3412">OLA 1: SPRINT 1 (SEMANAS 1–2) · QUICK WINS</div>
   <div style="display: flex; flex-direction: column; gap: 6px; font-size: 11.5px; line-height: 1.4">
-  <div><b>PE&CO:</b> línea bajo CTA con entrega esperada</div>
   <div><b>PE&CO:</b> WhatsApp prellenado con datos</div>
-  <div><b>PE&CO:</b> etiquetas en campos y mailto corregido</div>
-  <div><b>CO:</b> cédula y Cámara Comercio</div>
+  <div><b>PE:</b> línea bajo CTA con entrega esperada</div>
+  <div><b>PE:</b> etiquetas en campos, mailto y reparar 'Servicios'</div>
+  <div><b>CO:</b> cédula, Cámara Comercio y unificar WhatsApp</div>
   <div><b>CO:</b> unificar término (alquiler/renting)</div>
   </div>
   </div>
   <div style="border-top: 3px solid #404040; background: #FAFAFA; border-radius: 0 0 8px 8px; padding: 14px; display: flex; flex-direction: column; gap: 6px">
-  <div style="font-size: 11px; font-weight: 700; color: #404040">OLA 2: MES 1 · IGUALAR Y GUIAR</div>
+  <div style="font-size: 11px; font-weight: 700; color: #404040">OLA 2: SPRINT 1-2 (SEMANAS 1–4) · IGUALAR Y UNIFICAR</div>
   <div style="display: flex; flex-direction: column; gap: 6px; font-size: 11.5px; line-height: 1.4">
   <div><b>PE&CO:</b> pregunta guiada temporal vs parque</div>
   <div><b>PE&CO:</b> página gracias con agenda</div>
-  <div><b>PE&CO:</b> eventos GTM y CRM coordinados</div>
-  <div><b>CO:</b> cotizador con precio en COP</div>
+  <div><b>PE&CO:</b> unificación de base de código y MarTech (GTM/CRM)</div>
+  <div><b>CO:</b> cotizador con precio en COP y prueba social local</div>
   </div>
   </div>
   <div style="border-top: 3px solid #A3A3A3; background: #FAFAFA; border-radius: 0 0 8px 8px; padding: 14px; display: flex; flex-direction: column; gap: 6px">
-  <div style="font-size: 11px; font-weight: 700; color: #525252">OLA 3: MESES 2–3 · OPTIMIZAR</div>
+  <div style="font-size: 11px; font-weight: 700; color: #525252">OLA 3: SPRINTS 2–4 (SEMANAS 3–8) · OPTIMIZAR & ESCALAR</div>
   <div style="display: flex; flex-direction: column; gap: 6px; font-size: 11.5px; line-height: 1.4">
   <div><b>PE&CO:</b> A/B test formulario corto paso 2</div>
   <div><b>PE&CO:</b> A/B test precio visible vs "desde"</div>
   <div><b>PE&CO:</b> Packs por perfil de empleado</div>
-  <div><b>CO:</b> Prueba social con clientes locales</div>
   </div>
   </div>
   </div>
@@ -511,12 +536,12 @@ Map actionable recommendations onto an Impact vs. Effort (2x2) Matrix:
   <!-- FASE 5: ANALÍTICA Y SCORECARD DE UNIT ECONOMICS -->
   <div style="display: flex; flex-direction: column; gap: 10px">
   <h2 style="margin: 0; font-size: 17px; font-weight: 800; color: #0F172A;">FASE 5: Analítica y Scorecard de Unit Economics (Qué Medir)</h2>
-  <p style="margin: 0; font-size: 12px; color: #595959"><b>Idea Principal: Establecer KPIs base unificados a lo largo de la conversión de tráfico, abandono de formularios, calidad de leads (MQL a SQL) y velocidad de respuesta.</b></p>
+  <p style="margin: 0; font-size: 12px; color: #595959"><b>Idea Principal: Medición integral del rendimiento financiero y comercial del embudo alineada con métricas clave de adquisición.</b></p>
   <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px">
-  <div style="border: 1px solid #E5E5E5; border-radius: 8px; padding: 10px; text-align: center;"><div style="font-size: 18px; font-weight: 800; color: #fe5000">%</div><div style="font-size: 11px; color: #404040">Sesión → lead por canal</div></div>
-  <div style="border: 1px solid #E5E5E5; border-radius: 8px; padding: 10px; text-align: center;"><div style="font-size: 18px; font-weight: 800; color: #fe5000">%</div><div style="font-size: 11px; color: #404040">Abandono de cotizador</div></div>
-  <div style="border: 1px solid #E5E5E5; border-radius: 8px; padding: 10px; text-align: center;"><div style="font-size: 18px; font-weight: 800; color: #fe5000">%</div><div style="font-size: 11px; color: #404040">Lead → MQL / SQL</div></div>
-  <div style="border: 1px solid #E5E5E5; border-radius: 8px; padding: 10px; text-align: center;"><div style="font-size: 18px; font-weight: 800; color: #fe5000">min</div><div style="font-size: 11px; color: #404040">Tiempo a 1era respuesta</div></div>
+  <div style="border: 1px solid #E5E5E5; border-radius: 8px; padding: 10px; text-align: center;"><div style="font-size: 18px; font-weight: 800; color: #fe5000">6.5%</div><div style="font-size: 11px; color: #404040">Tráfico → MQL total (2,074/32.0k)</div></div>
+  <div style="border: 1px solid #E5E5E5; border-radius: 8px; padding: 10px; text-align: center;"><div style="font-size: 18px; font-weight: 800; color: #fe5000">13.8%</div><div style="font-size: 11px; color: #404040">MQL → SQL calificado (287/2,074)</div></div>
+  <div style="border: 1px solid #E5E5E5; border-radius: 8px; padding: 10px; text-align: center;"><div style="font-size: 18px; font-weight: 800; color: #94A3B8">Por medir</div><div style="font-size: 11px; color: #404040">Abandono de cotizador / CPL / CPQL</div></div>
+  <div style="border: 1px solid #E5E5E5; border-radius: 8px; padding: 10px; text-align: center;"><div style="font-size: 18px; font-weight: 800; color: #94A3B8">Por medir</div><div style="font-size: 11px; color: #404040">Tiempo a 1era respuesta / CAC</div></div>
   </div>
   </div>
 
@@ -528,7 +553,7 @@ Map actionable recommendations onto an Impact vs. Effort (2x2) Matrix:
   </div>
 
   <p style="margin: 0; font-size: 12.5px; line-height: 1.5; color: #D1D5DB;">
-  <b>Idea Principal: Unificar leasein.pe y leasein.com.co en una sola plataforma multirregión elimina costos técnicos duplicados, maximiza la autoridad SEO del dominio y reduce drásticamente el CPL.</b> Mantener webs separadas duplica gastos tecnológicos y fragmenta marca sin beneficio.
+  <b>Idea Principal: Se recomienda unificar la base de código, el CMS y el stack MarTech (repositorio, GTM y CRM únicos), manteniendo los dominios .pe y .com.co por confianza local, con hreflang entre ellos.</b> Esta arquitectura puede reducir el CPL y evitar la duplicación de despliegues.
   </p>
 
   <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px;">
@@ -538,7 +563,7 @@ Map actionable recommendations onto an Impact vs. Effort (2x2) Matrix:
   </div>
   <div style="background: #1F2937; border-radius: 8px; padding: 12px;">
   <div style="font-size: 11px; font-weight: 700; color: {{accent}}; margin-bottom: 2px;">2. AUTORIDAD SEO</div>
-  <div style="font-size: 11px; line-height: 1.4; color: #9CA3AF">Consolida backlinks bajo un solo dominio usando <code style="color:#fe5000">hreflang</code> por país.</div>
+  <div style="font-size: 11px; line-height: 1.4; color: #9CA3AF">Consolida la gestión técnica conectando ccTLDs mediante etiquetas <code style="color:#fe5000">hreflang</code> explícitas.</div>
   </div>
   <div style="background: #1F2937; border-radius: 8px; padding: 12px;">
   <div style="font-size: 11px; font-weight: 700; color: {{accent}}; margin-bottom: 2px;">3. MARTECH & DATOS</div>
@@ -547,11 +572,11 @@ Map actionable recommendations onto an Impact vs. Effort (2x2) Matrix:
   </div>
 
   <div style="border-top: 1px solid #1F2937; padding-top: 10px; display: flex; justify-content: space-between; align-items: center; font-size: 11.5px;">
-  <div style="color: #E5E7EB;"><b>Ahorro de Tiempo y Costos:</b></div>
+  <div style="color: #E5E7EB;"><b>Ahorro de Tiempo y Costos (estimación referencial a validar):</b></div>
   <div style="display: flex; gap: 16px;">
   <span style="color: #4ADE80;"><b>~35%</b> Menos Hosting/MarTech</span>
   <span style="color: #4ADE80;"><b>~50%</b> Devs más rápidos</span>
-  <span style="color: #4ADE80;"><b>15-25%</b> Reducción CPL</span>
+  <span style="color: #4ADE80;"><b>15-25%</b> Eficiencia estimada CPL</span>
   </div>
   </div>
   </div>
@@ -562,7 +587,7 @@ Map actionable recommendations onto an Impact vs. Effort (2x2) Matrix:
     <h2 style="margin: 0; font-size: 18px; font-weight: 800; color: #0F172A;">PLAN DE TRABAJO Y ESTIMACIÓN DE HORAS (SPRINT 1 · 2 SEMANAS)</h2>
     <div style="font-size: 11px; font-weight: 700; color: {{accent}}">2 DEVS SEMI-SENIOR · 160 H TOTALES</div>
   </div>
-  <p style="margin: 0; font-size: 12px; color: #595959"><b>Idea Principal: Plan de ejecución de 10 días hábiles (2 semanas) estructurado en 5 fases técnicas con estimación de horas dedicadas por desarrollador para las 6 vistas y unificación multipaís.</b></p>
+  <p style="margin: 0; font-size: 12px; color: #595959"><b>Idea Principal: Plan de ejecución de 10 días hábiles (2 semanas) estructurado en 5 fases técnicas con estimación de horas para las 6 vistas clave (Home PE, Home CO, Cotizador, Modal/Formulario, Servicios y Página de Gracias) y la unificación de base de código.</b></p>
 
   <!-- TARJETAS DE RESUMEN DE CAPACIDAD DE HORAS -->
   <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px;">
@@ -588,7 +613,7 @@ Map actionable recommendations onto an Impact vs. Effort (2x2) Matrix:
   <div style="border: 1px solid #E5E5E5; border-radius: 10px; overflow: hidden; font-size: 11.5px;">
     <div style="background: #141414; color: #FFFFFF; padding: 10px 14px; font-weight: 700; font-size: 12px; display: flex; justify-content: space-between; align-items: center;">
       <span>ESTIMACIÓN DE HORAS POR FASE (SPRINT 1) — DESGLOSE TÁCTICO</span>
-      <span style="color: {{accent}};">10 DÍAS HÁBILES</span>
+      <span style="color: {{accent}};">10 DÍAS HÁBILES (160 H)</span>
     </div>
 
     <div style="display: grid; grid-template-columns: minmax(0, 1fr) 130px 110px 110px; background: #F5F5F5; font-size: 11px; font-weight: 700; color: #404040; border-bottom: 1px solid #E5E5E5;">
@@ -601,10 +626,10 @@ Map actionable recommendations onto an Impact vs. Effort (2x2) Matrix:
     <!-- FASE 1 -->
     <div style="display: grid; grid-template-columns: minmax(0, 1fr) 130px 110px 110px; border-bottom: 1px solid #EEEEEE; background: #FFFFFF;">
       <div style="padding: 10px 12px;">
-        <b>Fase 1: Setup de Arquitectura, Tipografía & Vistas 1-2 (Home PE/CO)</b><br>
-        <span style="font-size: 10.5px; color: #64748B;">Configuración de repositorio unificado, migración a Poppins, corrección de textos/términos en Colombia y etiquetas en campos.</span>
+        <b>Fase 1: Setup de Arquitectura, Estandarización Tipográfica & Vistas 1-2 (Home PE/CO)</b><br>
+        <span style="font-size: 10.5px; color: #64748B;">Configuración de repositorio unificado, estandarización tipográfica a Poppins, corrección de textos/términos en Colombia y etiquetas en campos.</span>
       </div>
-      <div style="padding: 10px 6px; text-align: center; color: #0F172A; font-weight: 700;">Días 1–2</div>
+      <div style="padding: 10px 6px; text-align: center; color: #0F172A; font-weight: 700;">Días 1–2 (16 h)</div>
       <div style="padding: 10px 6px; text-align: center; font-weight: 700;">16 h</div>
       <div style="padding: 10px 6px; text-align: center; font-weight: 700;">16 h</div>
     </div>
@@ -612,23 +637,23 @@ Map actionable recommendations onto an Impact vs. Effort (2x2) Matrix:
     <!-- FASE 2 -->
     <div style="display: grid; grid-template-columns: minmax(0, 1fr) 130px 110px 110px; border-bottom: 1px solid #EEEEEE; background: #FFFFFF;">
       <div style="padding: 10px 12px;">
-        <b>Fase 2: Cotizador Multipaís, Modales & Flow Post-CTA (Vistas 3-4)</b><br>
-        <span style="font-size: 10.5px; color: #64748B;">Cotizador con precios en COP/PEN, formulario en 2 pasos (RUC/NIT al final), redirección a WhatsApp prellenado y Página de Gracias.</span>
+        <b>Fase 2: Cotizador Multipaís, Modales & Flow Post-CTA (Vistas 3-4: Cotizador, Modal & Gracias)</b><br>
+        <span style="font-size: 10.5px; color: #64748B;">Cotizador con precios en COP/PEN, formulario modal en 2 pasos (RUC/NIT al final), redirección a WhatsApp prellenado y Página de Gracias.</span>
       </div>
-      <div style="padding: 10px 6px; text-align: center; color: #0F172A; font-weight: 700;">Días 3–5</div>
-      <div style="padding: 10px 6px; text-align: center; font-weight: 700;">20 h</div>
-      <div style="padding: 10px 6px; text-align: center; font-weight: 700;">16 h</div>
+      <div style="padding: 10px 6px; text-align: center; color: #0F172A; font-weight: 700;">Días 3–5 (24 h)</div>
+      <div style="padding: 10px 6px; text-align: center; font-weight: 700;">24 h</div>
+      <div style="padding: 10px 6px; text-align: center; font-weight: 700;">24 h</div>
     </div>
 
     <!-- FASE 3 -->
     <div style="display: grid; grid-template-columns: minmax(0, 1fr) 130px 110px 110px; border-bottom: 1px solid #EEEEEE; background: #FFFFFF;">
       <div style="padding: 10px 12px;">
-        <b>Fase 3: Prueba Social Local, Vistas 5-6 & Redirecciones</b><br>
+        <b>Fase 3: Prueba Social Local, Vista 5 (Servicios) & Redirecciones</b><br>
         <span style="font-size: 10.5px; color: #64748B;">Módulo de prueba social segregado por país (logos/casos CO y PE), corrección de la Vista 5 (Servicios) y ajuste de cliente mailto.</span>
       </div>
-      <div style="padding: 10px 6px; text-align: center; color: #0F172A; font-weight: 700;">Días 6–7</div>
-      <div style="padding: 10px 6px; text-align: center; font-weight: 700;">14 h</div>
-      <div style="padding: 10px 6px; text-align: center; font-weight: 700;">14 h</div>
+      <div style="padding: 10px 6px; text-align: center; color: #0F172A; font-weight: 700;">Días 6–7 (16 h)</div>
+      <div style="padding: 10px 6px; text-align: center; font-weight: 700;">16 h</div>
+      <div style="padding: 10px 6px; text-align: center; font-weight: 700;">16 h</div>
     </div>
 
     <!-- FASE 4 -->
@@ -637,8 +662,8 @@ Map actionable recommendations onto an Impact vs. Effort (2x2) Matrix:
         <b>Fase 4: Integración MarTech, Eventos GTM & SEO Internacional</b><br>
         <span style="font-size: 10.5px; color: #64748B;">Implementación de <code style="color:#fe5000">hreflang</code> por región, estructuración de dataLayer para eventos comunes de conversión en GTM y vinculación CRM.</span>
       </div>
-      <div style="padding: 10px 6px; text-align: center; color: #0F172A; font-weight: 700;">Días 8–9</div>
-      <div style="padding: 10px 6px; text-align: center; font-weight: 700;">12 h</div>
+      <div style="padding: 10px 6px; text-align: center; color: #0F172A; font-weight: 700;">Días 8–9 (16 h)</div>
+      <div style="padding: 10px 6px; text-align: center; font-weight: 700;">16 h</div>
       <div style="padding: 10px 6px; text-align: center; font-weight: 700;">16 h</div>
     </div>
 
@@ -648,9 +673,9 @@ Map actionable recommendations onto an Impact vs. Effort (2x2) Matrix:
         <b style="color: #15803D;">Fase 5: QA Testing Intensivo, Optimización Mobile & Deploy</b><br>
         <span style="font-size: 10.5px; color: #64748B;">Pruebas cruzadas de usabilidad, auditoría de disparo de píxeles, optimización de velocidad de carga (Web Vitals) y migración a producción.</span>
       </div>
-      <div style="padding: 10px 6px; text-align: center; color: #15803D; font-weight: 800;">Día 10</div>
-      <div style="padding: 10px 6px; text-align: center; font-weight: 800; color: #15803D;">18 h</div>
-      <div style="padding: 10px 6px; text-align: center; font-weight: 800; color: #15803D;">18 h</div>
+      <div style="padding: 10px 6px; text-align: center; color: #15803D; font-weight: 800;">Día 10 (8 h)</div>
+      <div style="padding: 10px 6px; text-align: center; font-weight: 800; color: #15803D;">8 h</div>
+      <div style="padding: 10px 6px; text-align: center; font-weight: 800; color: #15803D;">8 h</div>
     </div>
 
   </div>
@@ -658,8 +683,8 @@ Map actionable recommendations onto an Impact vs. Effort (2x2) Matrix:
   <!-- ESTIMACIÓN DE LOS SIGUIENTES 3 SPRINTS (SPRINTS 2, 3 Y 4) -->
   <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 6px;">
     <div style="display: flex; justify-content: space-between; align-items: baseline;">
-      <h3 style="margin: 0; font-size: 15px; font-weight: 800; color: #0F172A;">HOJA DE RUTA DE EVOLUCIÓN: SIGUIENTES 3 SPRINTS (SPRINTS 2–4)</h3>
-      <span style="font-size: 11px; font-weight: 700; color: #64748B;">CAPACIDAD ESTIMADA: 480 HORAS HOMBRE HASTA MES 3</span>
+      <h3 style="margin: 0; font-size: 15px; font-weight: 800; color: #0F172A;">HOJA DE RUTA DE EVOLUCIÓN: SIGUIENTES 3 SPRINTS (480 HORAS HOMBRE EN LAS SEMANAS 3–8)</h3>
+      <span style="font-size: 11px; font-weight: 700; color: #64748B;">CAPACIDAD ESTIMADA: 480 HORAS TOTALES</span>
     </div>
     <p style="margin: 0; font-size: 12px; color: #595959"><b>Idea Principal: Planificación estratégica a mediano plazo (Sprints 2 a 4) para escalabilidad de experimentos A/B, personalización avanzada por geolocalización y automatización de lead scoring en CRM.</b></p>
 
@@ -668,7 +693,7 @@ Map actionable recommendations onto an Impact vs. Effort (2x2) Matrix:
       <!-- SPRINT 2 -->
       <div style="border: 1px solid #E2E8F0; border-top: 3px solid #fe5000; border-radius: 8px; padding: 12px; background: #FFFFFF; display: flex; flex-direction: column; gap: 6px;">
         <div style="display: flex; justify-content: space-between; align-items: center;">
-          <span style="font-size: 11px; font-weight: 800; color: #0F172A;">SPRINT 2 (MES 1.5)</span>
+          <span style="font-size: 11px; font-weight: 800; color: #0F172A;">SPRINT 2 (SEMANAS 3–4)</span>
           <span style="font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 4px; background: #FFF4ED; color: #fe5000;">160 HORAS</span>
         </div>
         <div style="font-size: 11px; font-weight: 700; color: #fe5000;">EXPERIMENTACIÓN A/B & LEAD GUIDANCE</div>
@@ -681,7 +706,7 @@ Map actionable recommendations onto an Impact vs. Effort (2x2) Matrix:
       <!-- SPRINT 3 -->
       <div style="border: 1px solid #E2E8F0; border-top: 3px solid #0F172A; border-radius: 8px; padding: 12px; background: #FFFFFF; display: flex; flex-direction: column; gap: 6px;">
         <div style="display: flex; justify-content: space-between; align-items: center;">
-          <span style="font-size: 11px; font-weight: 800; color: #0F172A;">SPRINT 3 (MES 2.5)</span>
+          <span style="font-size: 11px; font-weight: 800; color: #0F172A;">SPRINT 3 (SEMANAS 5–6)</span>
           <span style="font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 4px; background: #F1F5F9; color: #0F172A;">160 HORAS</span>
         </div>
         <div style="font-size: 11px; font-weight: 700; color: #0F172A;">AUTOMATIZACIÓN CRM & INTEGRACIÓN B2B</div>
@@ -694,7 +719,7 @@ Map actionable recommendations onto an Impact vs. Effort (2x2) Matrix:
       <!-- SPRINT 4 -->
       <div style="border: 1px solid #E2E8F0; border-top: 3px solid #15803D; border-radius: 8px; padding: 12px; background: #FFFFFF; display: flex; flex-direction: column; gap: 6px;">
         <div style="display: flex; justify-content: space-between; align-items: center;">
-          <span style="font-size: 11px; font-weight: 800; color: #0F172A;">SPRINT 4 (MES 3.5)</span>
+          <span style="font-size: 11px; font-weight: 800; color: #0F172A;">SPRINT 4 (SEMANAS 7–8)</span>
           <span style="font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 4px; background: #DCFCE7; color: #15803D;">160 HORAS</span>
         </div>
         <div style="font-size: 11px; font-weight: 700; color: #15803D;">PERSONALIZACIÓN DINÁMICA & ESCALA</div>
